@@ -38,20 +38,22 @@
 @@checkIceTrap:
     cmp     r0, #Upgrade_IceTrap
     bne     @@checkMetroid
-    ldr     r0, =SamusUpgrades
-    ldrb    r0, [r0, SamusUpgrades_SuitUpgrades]
-    lsr     r0, #SuitUpgrade_VariaSuit + 1
-    bcs     @@skipFreeze
+    ; Freeze Samus regardless of suit type
     mov     r0, #146h >> 1
     lsl     r0, #1
-    bl      08002854h
-    ldr     r1, =0828FD04h
-    ldr     r0, =SamusState
-    ldrb    r0, [r0, SamusState_Unk00]
-    lsl     r0, #2
-    ldr     r1, [r1, r0]
+    bl      Sfx_PlayIfNotPlaying
+    ; Add ice missile effect
+    ldr     r2, =SamusState
+    mov     r0, SamusState_HitboxTop
+    ldsh    r1, [r2, r0]
+    asr     r1, r1, 1
+    ldrh    r0, [r2, SamusState_PositionY]
+    add     r0, r1
+    ldrh    r1, [r2, SamusState_PositionX]
+    mov     r2, #0Ah
+    bl      SpawnParticleEffect
     mov     r0, #0FBh
-    blx     r1
+    bl      Samus_SetPose
 @@skipFreeze:
     mov     r0, #Message_IceTrapUpgrade
     b       @@checkAutoMessage

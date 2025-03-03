@@ -240,6 +240,7 @@ SamusState_VelocityY equ 1Ch
 SamusState_StandingFlag equ 20h
 SamusState_AnimationFrame equ 21h
 SamusState_Animation equ 22h
+SamusState_HitboxTop equ 26h
 .sym on
 
 SamusTimers equ 030012F0h

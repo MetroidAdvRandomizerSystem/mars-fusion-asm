@@ -1,11 +1,14 @@
 DeflateVram equ 080009ECh
 InitializeAudio equ 08002298h
 Sfx_Play equ 0800270Ch
+Sfx_PlayIfNotPlaying equ 08002854h
 BitFill equ 08002FECh
 Music_CheckSet equ 08003498h
 Music_CheckPlay equ 080034F4h
 Music_Play equ 08003538h
 Music_FadeOut equ 080036F0h
+
+Samus_SetPose equ 08008FA0h
 
 SpawnPrimarySprite equ 0800FBC8h
 Nightmare_MakeMissilesFall equ 0805DD40h

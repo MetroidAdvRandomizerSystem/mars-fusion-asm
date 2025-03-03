@@ -66,7 +66,7 @@
 @@play_hit_sfx:
     mov     r0, #0FFh
     add     r0, #0E0h
-    bl      08002854h
+    bl      Sfx_PlayIfNotPlaying
     mov     r1, #1
     b       @@return
 @@return_false:
