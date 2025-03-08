@@ -139,7 +139,7 @@
 .endfunc
 .endautoregion
 
-.org 0801F40Ah
+.org 0801F40Ah ; Modifying code in SavePlatformInit
 .area 0Ch, 0
     ; check if save pad should start lowered
     bl      @CheckLoadSaveOrNewGame
@@ -148,7 +148,7 @@
     b       0801F466h
 .endarea
 
-.org 08060DF8h
+.org 08060DF8h ; Modifying code in CheckOnEventWithNavigationDisabled
 .area 24h
     ; check if navigation pad should start inactive
     push    { lr }
@@ -166,13 +166,13 @@
     .pool
 .endarea
 
-.org 08064600h
+.org 08064600h ; Modifying code in LoadRoom
 .area 0Ch, 0
     ; force recalculate bg position when loading save
 .endarea
 
 .org StartingLocation
-.area 08h
+.area StartingLocation_Size
     .db     Area_MainDeck
     .db     00h
     .db     00h
@@ -205,5 +205,52 @@
     mov     r9, r3
     bl      080A0694h ; Return to where the original function would have gone
     .pool
+.endfunc
+.endautoregion
+
+
+; Ensure Warping to Start does not overwrite your most recent save location when
+; continuing from a Game Over.
+
+; Hijack GameOver subroutine. This branch is called when you select "yes" to reload
+.org 08000634h
+.area 4
+    bl      @ReloadFromGameOver
+.endarea
+
+; Copies the Backup Save over the Current Save
+.org Sram_RestoreBackupSaveFileAfterReload
+.area 0807FB84h - Sram_RestoreBackupSaveFileAfterReload, 0
+    push    { lr }
+    sub     sp, #4
+    ldr     r1, =BackupSaveData
+    ldr     r0, =SaveSlot
+    ldrb    r0, [r0]
+    lsl     r0, #2
+    add     r1, r0
+    ldr     r1, [r1]    ; Current Backup Save
+    ldr     r2, =SaveData
+    add     r0, r2
+    ldr     r2, [r0]    ; Current Save
+    mov     r3, #SaveData_Size >> 8
+    lsl     r3, #8
+    mov     r0, #10h    ; 10h bits
+    str     r0, [sp]
+    mov     r0, #3      ; DMA 3
+    bl      DmaTransfer
+@@return:
+    add     sp, #4
+    pop     { r0 }
+    bx      r0
+    .pool
+.endarea
+
+.autoregion
+    .align 2
+.func @ReloadFromGameOver
+    push    { lr }
+    bl      Sram_RestoreBackupSaveFileAfterReload
+    bl      Sram_CheckLoadSaveFileWithBlank
+    pop     { pc }
 .endfunc
 .endautoregion

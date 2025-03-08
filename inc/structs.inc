@@ -497,6 +497,7 @@ SaveMeta_Size equ 14h
 .sym on
 
 SaveData equ 0858225Ch
+BackupSaveData equ 08582268h
 .sym off
 SaveData_Area equ 1Dh
 SaveData_Room equ 1Eh

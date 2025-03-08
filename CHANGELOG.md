@@ -5,6 +5,7 @@
 ### Randomizer
 - Fixed: Removed event based door transition from Reactor Silo.
 - Fixed: Escape music now triggers properly.
+- Fixed: Respawning after warping to start now loads your most recent save location if you Game Over.
 
 ## 0.2.0 - 2025-03-01
 
