@@ -17,6 +17,7 @@ OPTIONALS := bombless_pbs
 OPTIONALS += missiles_without_mains
 OPTIONALS += anti_softlock
 OPTIONALS += unhidden_map
+OPTIONALS += unhidden_map_doors
 
 OBJS := $(OPTIONALS:%=$(OBJ_DIR)/%.gba)
 PATCHES := $(OPTIONALS:%=$(BIN_DIR)/%.ips)

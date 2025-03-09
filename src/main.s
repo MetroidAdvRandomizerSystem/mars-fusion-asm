@@ -35,6 +35,9 @@
 .ifndef UNHIDDEN_MAP
 .definelabel UNHIDDEN_MAP, 0
 .endif
+.ifndef UNHIDDEN_MAP_DOORS
+.definelabel UNHIDDEN_MAP_DOORS, 0
+.endif
 
 .include "inc/constants.inc"
 .include "inc/enums.inc"
@@ -110,6 +113,8 @@ RevealHiddenTilesFlag equ 087FF08Ch
 .if UNHIDDEN_MAP
 .include "src/qol/unhidden-map.s"
 .endif
+.if UNHIDDEN_MAP_DOORS
+.include "src/qol/unhidden-map-doors.s"
 .endif
 
 ; Physics patches
