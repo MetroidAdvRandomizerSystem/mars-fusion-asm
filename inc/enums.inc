@@ -509,7 +509,7 @@ ClipdataTile_2x2TopRightNoReform equ 005Dh
 ClipdataTile_2x2BottomLeftNeverReform  equ 0060h
 ClipdataTile_2x2BottomRightNeverReform equ 0061h
 ClipdataTile_MissileTankHidden equ 0064h
-ClipdataTile_EngergyTankHidden equ 0065h
+ClipdataTile_EnergyTankHidden equ 0065h
 ClipdataTile_PBombTankHidden equ 0069h
 ClipdataTile_SpeedReform equ 006Bh
 ClipdataTile_2x2BottomLeftNoReform  equ 006Ch
