@@ -30,38 +30,43 @@
 .endarea
 
 
-; change event hatch to normal hatch after event triggered
+; Modifying code in CheckUnlockHatches
 .org 08063CA0h
     bl      @ResetEventHatches
 
-; hijack hatch lock code to store original hatch types
-.org 08063086h
+; Modifying code in LoadDoors
+.org 08065608h
     bl      @StoreHatchTypes
 
 
 .autoregion
 .align 4
 .func @StoreHatchTypes
-    ; Load original hatch type
-    ldrb    r0, [r3]
-    push    { r0, r3 }
-    ; Mask all but the type
+    push    { r1 - r3 }
+    ; Check if code should run
+    ldr     r0, =NonGameplayFlag
+    ldrb    r0, [r0]
+    cmp     r0, #0
+    bne     @@return ; exit early if called from non-gameplay or cutscene
+    ldr     r1, =OriginalHatchTypes
+    ldr     r2, =HatchData
+    mov     r3, #0 ; Loop counter
+@@hatchLoop:
+    ldrb    r0, [r2, HatchData_Status]
+    ; Mask out everything but the type
     lsr     r0, #5
-    ; If the original hatch type was an event ("can lock"), we'll set it to an L0 hatch after the event clears
-    ; This is special handling for Operations Room. 
-    ; See https://github.com/MetroidAdvRandomizerSystem/mars-fusion-asm/issues/175
-    cmp     r0, #5 
-    bne     @@storeType
-    mov     r0, #0
-@@storeType:
-    ; r4 contains the hatch number
     lsl     r0, #5
-    ldr     r3, =OriginalHatchTypes
-    strb    r0, [r3, r4]
-    ; Code that we hijacked
-    pop     { r0, r3 }
-    lsl     r0, r0, 1Fh
-    bl      0806308Ah ; Return to original code flow
+    strb    r0, [r1, r3]
+@@loopIncrement:
+    add     r2, #4
+    add     r3, #1
+    cmp     r3, #6
+    bne     @@hatchLoop ; Loop for all hatches
+@@return:
+    pop     { r1 - r3 }
+    ; Hijacked code simply pops r0 and returns, same functionality must be maintained
+    pop     r0
+    bx      r0
     .pool
 .endfunc
 .endautoregion
