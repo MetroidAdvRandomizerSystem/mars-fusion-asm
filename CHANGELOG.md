@@ -6,6 +6,7 @@
 
 ### Randomizer
 - Fixed: Rooms with Event doors no longer occasionally display the incorrect lock.
+- Fixed: Warp to Start correctly plays background music on fresh file.
 
 ## 0.3.0 - 2025-03-15
 
