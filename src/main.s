@@ -124,7 +124,6 @@ RevealHiddenTilesFlag equ 087FF08Ch
 .if PHYSICS
 .notice "Applying physics patches..."
 .include "src/physics/air-momentum.s"
-.include "src/physics/single-walljump.s"
 .include "src/physics/speedkeep.s"
 .endif
 

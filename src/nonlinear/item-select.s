@@ -745,6 +745,17 @@
     add     r0, r5
     ldr     r1, =UpgradeLookup
     ldrb    r0, [r1, r0]
+    ; r0 contains which upgrade is being toggled
+    ; if Screw Attack is being toggled, prevent if ScrewWJ flag is set
+    ; r2 and r3 are about to be reassigned, so safe to use.
+    cmp     r0, Upgrade_ScrewAttack
+    bne     @@finish_toggle
+    ldr     r2, =ScrewAttackWJFlag
+    ldrb    r2, [r2]
+    cmp     r2, #0
+    beq     @@finish_toggle
+    b       @@return
+@@finish_toggle:
     lsl     r0, #2
     ldr     r3, =MajorUpgradeInfo
     add     r3, r0

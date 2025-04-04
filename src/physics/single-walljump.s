@@ -8,13 +8,14 @@
     push    { r0-r3 }
     ldr     r2, =SamusState
     ldrb    r0, [r2, SamusState_Pose]
-    cmp     r0, #16h
+    cmp     r0, #SamusPose_WallJumping
     bne     @@default
     ; Do not set if space jump is active
     ldr     r1, =SamusUpgrades
     ldrb    r1, [r1, SamusUpgrades_SuitUpgrades]
     mov     r0, 1 << SuitUpgrade_SpaceJump
     and     r0, r1
+    cmp     r0, #0
     bne     @@default
     mov     r0, #1
     ldr     r2, =ScrewAttackWJFlag
@@ -22,7 +23,7 @@
 @@default:
     ; Always set Pose to Screw
     ldr     r2, =SamusState
-    mov     r0, #1Eh
+    mov     r0, #SamusPose_ScrewAttacking
     strb    r0, [r2, SamusState_Pose]
     pop     { r0-r3 }
     bl      0800623Ch ; Return to original code flow
@@ -47,7 +48,7 @@
     ; If pose isn't screw attack, allow, and turn flag off if it was on
     ldr     r2, =SamusState
     ldrb    r0, [r2, SamusState_Pose]
-    cmp     r0, #1Eh
+    cmp     r0, #SamusPose_ScrewAttacking
     bne     @@unsetScrewWJFlag
     ; Check Flag
     ldr     r2, =ScrewAttackWJFlag
@@ -124,7 +125,7 @@
     ; If pose isn't screw attack, turn flag off
     ldr     r2, =SamusState
     ldrb    r0, [r2, SamusState_Pose]
-    cmp     r0, #1Eh
+    cmp     r0, #SamusPose_ScrewAttacking
     bne     @@unsetScrewWJFlag
     b       @@return
 @@unsetScrewWJFlag:
