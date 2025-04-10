@@ -55,8 +55,9 @@ MessageTableLookupAddr equ 0879CDF4h ; This is not the location of the table its
 ; data to. The first address here should be used below when defining the free
 ; space region for the asm to use
 PatcherFreeSpace equ 087D0000h
-FutureReservedSpace equ 087F0000h
-FutureReservedSpace_Len equ 0F000h
+CreditsMusicSpace equ 087F0000h ; takes up 0x14E0h
+FutureReservedSpace equ 087F14E0h
+FutureReservedSpace_Len equ 0DB20h
 MinorLocationTable equ 087FF000h
 MajorLocations equ 087FF01Ch
 TankIncrements equ 087FF046h

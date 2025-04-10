@@ -339,3 +339,56 @@
 .incbin "data/credits-font.gfx"
 .endautoregion
 
+; Credits music changes
+
+; Looping Credits Track replacement
+.org CreditsMusicSpace
+.area 0A70h
+    .incbin "data/music/loopingcredits.bin"
+.endarea
+
+; Replace track 85 (Credits) with the new header at the end of the above bin file
+.org 080A8FE4h
+    .dw     087F0A4Ch
+
+; start Samus Image music when credits are over
+.autoregion
+    .align 2
+.func @PlaySamusImageMusic
+    push    { r0-r3 }
+    mov     r0, #50h
+    mov     r1, #0Eh
+    bl      Music_Play
+    pop     { r0-r3 }
+    ldr     r0, =#80A1CFDh
+    bl      08000B88h ; A function call in the original code, purpose unknown
+    bl      080A2554h ; Return to where the original function would have gone
+    .pool
+.endfunc
+.endautoregion
+
+; Hijack the original code location that starts the Samus Image display, to change the music
+.org 080A254Eh
+.area 06h, 0
+    bl     @PlaySamusImageMusic
+.endarea
+
+.org CreditsMusicSpace + 0A70h
+.area 750h
+    .incbin "data/music/endscreen.bin"
+.endarea
+
+; Replace track 80 (unused) with the new header at the end of the above bin file
+.org 080A8FBCh
+    .dw     087F116Ch
+
+; Replace track 79 (unused) with the credits finale. In the future we may
+; try to include this at the very end of the credits.
+
+.org CreditsMusicSpace + 11C0h
+.area 320h
+    .incbin "data/music/creditsfinale.bin"
+.endarea
+
+.org 080A8FB4h
+    .dw     087F14C8h
