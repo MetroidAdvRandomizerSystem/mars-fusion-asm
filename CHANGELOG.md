@@ -4,6 +4,7 @@
 - Changed: Hidden Tanks are now revealed when "Reveal Hidden Tiles" is enabled. They will show as a beam-weak block.
 - Changed: Message box duration for major items is back to its vanilla value (the previous music track will resume faster).
 - Fixed: Removed an exploit that allowed toggling Screw Attack to give Single Walljump functionality.
+- Fixed: Powamp Shaft Powamps no longer require X to spawn
 
 ### Randomizer
 - Fixed: Rooms with Event doors no longer occasionally display the incorrect lock.
