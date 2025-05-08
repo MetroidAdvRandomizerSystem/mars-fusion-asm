@@ -619,6 +619,9 @@ MajorLocation_AQASecurity equ 11h
 MajorLocation_AQAData equ 12h
 MajorLocation_XBox equ 13h
 MajorLocation_Ridley equ 14h
+MajorLocation_BoilerCooling equ 15h
+MajorLocation_AnimalsFreed equ 16h
+MajorLocation_AuxiliaryPower equ 17h
 MajorLocation_Invalid equ 0FFh
 
 StoryFlag_MissileHatch equ 0
