@@ -129,8 +129,8 @@ CurrentSprite equ 030006BCh
 SpriteList equ 03000140h
 .sym off
 Sprite_Status equ 00h
-Sprite_PositionX equ 02h
-Sprite_PositionY equ 04h
+Sprite_YPosition equ 02h
+Sprite_XPosition equ 04h
 Sprite_XParasiteTimer equ 06h
 Sprite_Unk08 equ 08h
 Sprite_BboxTop equ 0Ah

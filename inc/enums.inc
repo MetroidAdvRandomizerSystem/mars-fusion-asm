@@ -236,8 +236,18 @@ EnvironmentalHazard_Heat equ 4
 EnvironmentalHazard_Subzero equ 5
 EnvironmentalHazard_Cold equ 6
 
-SpriteStatus_Exists equ 0
-SpriteStatus_FacingRight equ 9
+SpriteStatus_Exists equ 1 << 0
+SpriteStatus_OnScreen equ 1 << 1
+SpriteStatus_NotDrawn equ 1 << 2
+SpriteStatus_EnableMosaic equ 1 << 5
+SpriteStatus_XFlip equ 1 << 6
+SpriteStatus_RotationScaling equ 1 << 7
+SpriteStatus_YFlip equ 1 << 8
+SpriteStatus_FacingRight equ 1 << 9
+SpriteStatus_SamusDetected equ 1 << 10
+SpriteStatus_SamusColliding equ 1 << 11
+SpriteStatus_OnTop equ 1 << 12
+SpriteStatus_IgnoreProjectiles equ 1 << 15
 
 SpriteId_MessageBox equ 21h
 SpriteId_Arachnus_CoreXNucleus equ 3Fh
