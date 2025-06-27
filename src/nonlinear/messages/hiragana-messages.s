@@ -66,6 +66,7 @@ HiraganaMessages:
     .dw     086B45B8h   ; sprite location abnormal
     .dw     @Message_IceTrap
     .dw     @Message_Nothing
+    .dw     @Message_InfantMetroidsPlaceholder ; This is the AutoMetroidHandler ID, does not have its own message text
     .fill   4 * CustomMessages_Maximum ; Reserve space for custom messages
 .endautoregion
 
@@ -86,6 +87,12 @@ HiraganaMessages:
     .align 2
 @Message_Nothing:
     .string 50, "[INDENT]Nothing acquired.\n"
+.endautoregion
+
+.autoregion
+    .align 2
+@Message_InfantMetroidsPlaceholder:
+    .string "Metroid Placeholder Message."
 .endautoregion
 
 .autoregion

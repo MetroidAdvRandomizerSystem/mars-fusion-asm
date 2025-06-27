@@ -184,6 +184,7 @@ Message_PowerBombTankUpgrade equ 34h
 Message_EnemyLocationAbnormal equ 35h
 Message_IceTrapUpgrade equ 36h
 Message_NothingUpgrade equ 37h
+Message_AutoMetroidHandler equ 38h ; This message ID will display the current Infant Metroid message
 Message_Auto equ 0FFh
 
 Tank_Missiles equ 1

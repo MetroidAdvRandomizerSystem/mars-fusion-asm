@@ -56,4 +56,4 @@ DiffusionMissileDamage equ 5
 
 IceVolumeFactor equ 0.6
 
-CustomMessages_Maximum equ 199 ; 57 Messages are reserved by existing behavior, leaving 199 ids left
+CustomMessages_Maximum equ 198 ; 58 Messages are reserved by existing behavior, leaving 198 ids left
