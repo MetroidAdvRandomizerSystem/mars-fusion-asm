@@ -666,7 +666,8 @@ MajorUpgradeInfo_Message equ 02h
 MajorLocations_Len equ 23
 MajorLocation_Upgrade equ 00h
 MajorLocation_Message equ 01h
-MajorLocation_Size equ 02h
+MajorLocation_Jingle equ 02h
+MajorLocation_Size equ 04h
 .sym on
 
 .sym off
@@ -679,7 +680,8 @@ MinorLocation_YPos equ 04h
 MinorLocation_Upgrade equ 05h
 MinorLocation_Sprite equ 06h
 MinorLocation_Message equ 07h
-MinorLocation_Size equ 08h
+MinorLocation_Jingle equ 08h
+MinorLocation_Size equ 10h
 .sym on
 
 .sym off
@@ -702,4 +704,10 @@ StoredRevealedTiles_Type equ 0
 StoredRevealedTiles_YPos equ 2
 StoredRevealedTiles_XPos equ 3
 StoredRevealedTiles_Size equ 4
+.sym on
+
+ItemJingleFlag equ 03005670h
+.sym off
+MinorItemJingle equ 0
+MajorItemJingle equ 1
 .sym on

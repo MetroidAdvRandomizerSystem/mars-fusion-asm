@@ -618,610 +618,714 @@ MinorLocations:
     .db     0Dh, 0Eh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room11:
     .db     Area_MainDeck, 11h, 0
     .db     09h, 14h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room23:
     .db     Area_MainDeck, 23h, 0
     .db     0Eh, 41h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room26:
     .db     Area_MainDeck, 26h, 0
     .db     35h, 0Ah
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room2D:
     .db     Area_MainDeck, 2Dh, 0
     .db     04h, 06h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room2E:
     .db     Area_MainDeck, 2Eh, 0
     .db     09h, 08h
     .db     Upgrade_InfantMetroid
     .db     UpgradeSprite_InfantMetroid
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room2F:
     .db     Area_MainDeck, 2Fh, 0
     .db     04h, 03h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room32:
     .db     Area_MainDeck, 32h, 0
     .db     36h, 08h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room33:
     .db     Area_MainDeck, 33h, 0
     .db     05h, 1Dh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room39:
     .db     Area_MainDeck, 39h, 0
     .db     0Ch, 0Ah
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room45:
     .db     Area_MainDeck, 45h, 0
     .db     1Dh, 1Dh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room47:
     .db     Area_MainDeck, 47h, 0
     .db     06h, 09h
     .db     Upgrade_InfantMetroid
     .db     UpgradeSprite_InfantMetroid
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room48:
     .db     Area_MainDeck, 48h, 0
     .db     0Dh, 09h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room49:
     .db     Area_MainDeck, 49h, 0
     .db     06h, 0Ah
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_MainDeck_Room54:
     .db     Area_MainDeck, 54h, 0
     .db     0Eh, 0Ah
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room05:
     .db     Area_SRX, 05h, 0
     .db     1Bh, 0Ah
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room11:
     .db     Area_SRX, 11h, 0
     .db     08h, 06h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_SRX, 11h, 1
     .db     19h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_SRX, 11h, 2
     .db     2Ch, 13h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room19:
     .db     Area_SRX, 19h, 0
     .db     0Fh, 08h ; REPLACE WHEN IMPLEMENTED
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room1E:
     .db     Area_SRX, 1Eh, 0
     .db     0Fh, 08h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room20:
     .db     Area_SRX, 20h, 0
     .db     1Dh, 09h
     .db     Upgrade_InfantMetroid
     .db     UpgradeSprite_InfantMetroid
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room27:
     .db     Area_SRX, 27h, 0
     .db     04h, 06h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room28:
     .db     Area_SRX, 28h, 0
     .db     0Ch, 08h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room2B:
     .db     Area_SRX, 2Bh, 0
     .db     0Dh, 0Bh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room2C:
     .db     Area_SRX, 2Ch, 0
     .db     04h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room2F:
     .db     Area_SRX, 2Fh, 0
     .db     0Ah, 02h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room32:
     .db     Area_SRX, 32h, 0
     .db     06h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector1_Room34:
     .db     Area_SRX, 34h, 0
     .db     0Dh, 07h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room06:
     .db     Area_TRO, 06h, 0
     .db     1Dh, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room09:
     .db     Area_TRO, 09h, 0
     .db     0Dh, 04h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room0A:
     .db     Area_TRO, 0Ah, 0
     .db     13h, 23h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room11:
     .db     Area_TRO, 11h, 0
     .db     2Ch, 07h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room15:
     .db     Area_TRO, 15h, 0
     .db     1Dh, 04h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room19:
     .db     Area_TRO, 19h, 0
     .db     04h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room1B:
     .db     Area_TRO, 1Bh, 0
     .db     1Ch, 07h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room1F:
     .db     Area_TRO, 1Fh, 0
     .db     28h, 07h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room21:
     .db     Area_TRO, 21h, 0
     .db     15h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room2A:
     .db     Area_TRO, 2Ah, 0
     .db     05h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room2F:
     .db     Area_TRO, 2Fh, 0
     .db     1Dh, 10h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room32:
     .db     Area_TRO, 32h, 0
     .db     03h, 07h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_TRO, 32h, 1
     .db     03h, 18h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room36:
     .db     Area_TRO, 36h, 0
     .db     04h, 05h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_TRO, 36h, 1
     .db     09h, 0Eh
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector2_Room37:
     .db     Area_TRO, 37h, 0
     .db     07h, 04h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_TRO, 37h, 1
     .db     0Ah, 1Ah
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room03:
     .db     Area_PYR, 03h, 0
     .db     2Ch, 0Dh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room06:
     .db     Area_PYR, 06h, 0
     .db     05h, 11h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room08:
     .db     Area_PYR, 08h, 0
     .db     09h, 09h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_PYR, 08h, 1
     .db     16h, 0Dh
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room09:
     .db     Area_PYR, 09h, 0
     .db     2Ah, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room0C:
     .db     Area_PYR, 0Ch, 0
     .db     0Ch, 19h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room13:
     .db     Area_PYR, 13h, 0
     .db     13h, 0Dh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_PYR, 13h, 1
     .db     2Bh, 0Ah
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room1C:
     .db     Area_PYR, 1Ch, 0
     .db     0Ch, 07h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_PYR, 1Ch, 1
     .db     24h, 1Bh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room1E:
     .db     Area_PYR, 1Eh, 0
     .db     04h, 0Dh
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room21:
     .db     Area_PYR, 21h, 0
     .db     0Fh, 0Ah
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room22:
     .db     Area_PYR, 22h, 0
     .db     0Ah, 0Fh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room23:
     .db     Area_PYR, 23h, 0
     .db     04h, 1Bh
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_PYR, 23h, 1
     .db     0Fh, 56h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector3_Room25:
     .db     Area_PYR, 25h, 0
     .db     0Fh, 03h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room06:
     .db     Area_AQA, 06h, 0
     .db     16h, 1Dh
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room0A:
     .db     Area_AQA, 0Ah, 0
     .db     0Ch, 1Dh
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room0D:
     .db     Area_AQA, 0Dh, 0
     .db     18h, 09h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_AQA, 0Dh, 1
     .db     26h, 0Fh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room0F:
     .db     Area_AQA, 0Fh, 0
     .db     2Ch, 05h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room11:
     .db     Area_AQA, 11h, 0
     .db     17h, 14h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room17:
     .db     Area_AQA, 17h, 0
     .db     39h, 13h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room18:
     .db     Area_AQA, 18h, 0
     .db     28h, 07h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room1C:
     .db     Area_AQA, 1Ch, 0
     .db     09h, 06h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room21:
     .db     Area_AQA, 21h, 0
     .db     0Ah, 0Dh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room24:
     .db     Area_AQA, 24h, 0
     .db     03h, 07h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room26:
     .db     Area_AQA, 26h, 0
     .db     16h, 0Ah
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_AQA, 26h, 1
     .db     2Ah, 05h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room29:
     .db     Area_AQA, 29h, 0
     .db     0Fh, 04h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector4_Room2E:
     .db     Area_AQA, 2Eh, 0
     .db     04h, 0Ah
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room04:
     .db     Area_ARC, 04h, 0
     .db     05h, 05h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_ARC, 04h, 1
     .db     14h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room0C:
     .db     Area_ARC, 0Ch, 0
     .db     03h, 0Ah
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room0E:
     .db     Area_ARC, 0Eh, 0
     .db     0Dh, 03h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room12:
     .db     Area_ARC, 12h, 0
     .db     03h, 03h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room16:
     .db     Area_ARC, 16h, 0
     .db     03h, 30h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room17:
     .db     Area_ARC, 17h, 0
     .db     0Eh, 06h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room1A:
     .db     Area_ARC, 1Ah, 0
     .db     04h, 06h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room1E:
     .db     Area_ARC, 1Eh, 0
     .db     17h, 07h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room21:
     .db     Area_ARC, 21h, 0
     .db     0Eh, 03h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room22:
     .db     Area_ARC, 22h, 0
     .db     0Eh, 08h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room24:
     .db     Area_ARC, 24h, 0
     .db     08h, 08h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room2F:
     .db     Area_ARC, 2Fh, 0
     .db     04h, 0Ah
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room32:
     .db     Area_ARC, 32h, 0
     .db     0Dh, 08h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector5_Room33:
     .db     Area_ARC, 33h, 0
     .db     0Bh, 03h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room00:
     .db     Area_NOC, 00h, 0
     .db     29h, 12h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room0F:
     .db     Area_NOC, 0Fh, 0
     .db     03h, 03h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room12:
     .db     Area_NOC, 12h, 0
     .db     0Fh, 03h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_NOC, 12h, 1
     .db     1Dh, 14h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room18:
     .db     Area_NOC, 18h, 0
     .db     1Dh, 09h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room1A:
     .db     Area_NOC, 1Ah, 0
     .db     05h, 06h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room1E:
     .db     Area_NOC, 1Eh, 0
     .db     09h, 0Dh
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_NOC, 1Eh, 1
     .db     13h, 08h
     .db     Upgrade_MissileTank
     .db     UpgradeSprite_MissileTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room22:
     .db     Area_NOC, 22h, 0
     .db     0Eh, 08h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room26:
     .db     Area_NOC, 26h, 0
     .db     2Dh, 06h
     .db     Upgrade_EnergyTank
     .db     UpgradeSprite_EnergyTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 @Items_Sector6_Room27:
     .db     Area_NOC, 27h, 0
     .db     0Ah, 18h
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
     .db     Area_NOC, 27h, 1
     .db     21h, 0Ah
     .db     Upgrade_PowerBombTank
     .db     UpgradeSprite_PowerBombTank
-    .db     Message_Auto
+    .db     Message_Auto, MinorItemJingle
+    .fill   07h, 0
 .endautoregion
 
 .org MinorLocationsPointer

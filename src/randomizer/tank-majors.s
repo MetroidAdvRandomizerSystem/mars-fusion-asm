@@ -184,14 +184,6 @@
 .endfunc
 .endarea
 
-.org 0802AAAEh
-.area 04h
-    ; prolong major item fanfare so it can't interrupt audio clips
-    ; last resort solution, but prevents several audio related bugs
-    mov     r0, #410 >> 1
-    lsl     r0, #1
-.endarea
-
 ; Obtain upgrade from tank and set message and fanfare
 .org 0806C3CEh
 .area 1Ah

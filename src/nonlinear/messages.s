@@ -143,10 +143,80 @@
 
 .org 0802AA2Ch
 .area 04h
-    ; play upgrade collected fanfare
-    cmp     r6, #0
-    bne     0802AA3Ch
+    bl      DetermineJingle
 .endarea
+
+.autoregion
+.align 4
+; Add one to offsets to account for THUMB
+.func DetermineJingle
+    push    { r1 }
+    ldr     r1, =ItemJingleFlag
+    ldrb    r0, [r1]
+    cmp     r0, #0
+    beq     @@minorJingle
+    ldr     r0, =0802AA31h ; Will Play Major Jingle
+    b       @@return
+@@minorJingle:
+    ldr     r0, =0802AA3Dh
+@@return:
+    pop     { r1 }
+    bx      r0
+.pool
+.endfunc
+.endautoregion
+
+.org 0802AAAEh
+.area 06h
+    bl  SetMajorLocationMessageBoxTimer
+    nop
+.endarea
+
+.org 0802AB04h
+.area 04h
+    bl  SetMinorLocationMessageBoxTimer
+.endarea
+
+.autoregion
+.func SetMajorLocationMessageBoxTimer
+    ldr     r4, =ItemJingleFlag
+    ldrb    r0, [r4]
+    cmp     r0, #0
+    beq     @@minorJingle
+    ; prolong major item fanfare so it can't interrupt audio clips
+    ; last resort solution, but prevents several audio related bugs
+    mov     r0, #410 >> 1
+    lsl     r0, #1
+    b       @@return
+@@minorJingle:
+    mov     r0, #05Ah
+@@return:    
+    ldr     r4, =CurrentSprite
+    strh    r0, [r4, Sprite_XParasiteTimer]
+    bx      lr
+.endfunc
+.pool
+.endautoregion
+
+.autoregion
+.func SetMinorLocationMessageBoxTimer
+    ldr     r1, =ItemJingleFlag
+    ldrb    r0, [r1]
+    cmp     r0, #0
+    beq     @@minorJingle
+    ; prolong major item fanfare so it can't interrupt audio clips
+    ; last resort solution, but prevents several audio related bugs
+    mov     r0, #410 >> 1
+    lsl     r0, #1
+    b       @@return
+@@minorJingle:
+    mov     r0, #05Ah
+@@return:
+    ldr     r1, =CurrentSprite
+    mov     pc, lr
+.endfunc
+.pool
+.endautoregion
 
 .org 0802AA3Ch
 .area 0Eh
