@@ -2,6 +2,7 @@
 
 ## Unreleased - 2025-XX-XX
 - Fixed: Horizontal Extendable pillars in Pillar Highway will no longer have glitchy graphics after extending and overlapping with certain arrows when revealed tiles are enabled.
+- Changed: Reveal Hidden Tiles: Revealed pickups with generic weak blocks have been replaced with a unique graphic indicating that the location contains an item.
 
 ### Randomizer
 - Added: Provided a message ID (0x38h) which will display the Infant Metroid message.

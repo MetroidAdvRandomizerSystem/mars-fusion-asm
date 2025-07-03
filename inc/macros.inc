@@ -55,3 +55,36 @@
 
 ; read pointer from source file
 .expfunc readptr(pos), readu32("metroid4.gba", pos & 0xFFFFFF)
+
+; import tileset gfx
+.macro tilesetgfx, label, file, regionsize
+.definelabel @@tilesetgfx_pointer, org()
+.defineregion readptr(@@tilesetgfx_pointer), regionsize
+.org @@tilesetgfx_pointer
+.area 4
+    .dw     label
+.endarea
+.autoregion
+    .align  4
+label:
+.incbin file
+.endautoregion
+.endmacro
+
+; import a tilemap for a tileset
+.macro tilemap, label, file, regionsize
+.definelabel @@tilemap_pointer, org()
+.defineregion readptr(@@tilemap_pointer), regionsize
+.org @@tilemap_pointer
+.area 4
+    .dw label
+.endarea
+.autoregion
+    .align  4
+label:
+    .db     02h
+    .db     (filesize(file) / 128) & 0xFF
+.incbin file
+    .dw     0
+.endautoregion
+.endmacro

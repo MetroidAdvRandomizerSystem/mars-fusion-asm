@@ -545,6 +545,7 @@ ClipdataRevealed_Missile equ 8006h
 ClipdataRevealed_PBomb equ 8007h
 ClipdataRevealed_Speed equ 8008h
 ClipdataRevealed_ScrewAttack equ 800Ah
+ClipdataRevealed_Pickup equ 4Ah
 
 ; non-vanilla enums
 

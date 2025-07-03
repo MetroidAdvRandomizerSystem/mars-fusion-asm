@@ -196,6 +196,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/randomizer/start-warp.s"
 .include "src/randomizer/start-location.s"
 .include "src/randomizer/tank-majors.s"
+.include "src/nonlinear/tileset-edits.s"
 .include "src/randomizer/room-name-display.s"
 .endif
 
