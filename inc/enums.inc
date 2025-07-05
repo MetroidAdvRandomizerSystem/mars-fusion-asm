@@ -272,6 +272,7 @@ SpriteId_OperationsRoomPad equ 69h
 SpriteId_SaxBoss_Samus equ 0C0h
 SpriteId_SaxBoss_Monster equ 0C1h
 
+SpriteProps_NoCollision equ 0
 SpriteProps_SolidForProjectiles equ 3
 SpriteProps_ImmuneToProjectiles equ 6
 

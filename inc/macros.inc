@@ -55,3 +55,16 @@
 
 ; read pointer from source file
 .expfunc readptr(pos), readu32("metroid4.gba", pos & 0xFFFFFF)
+
+; create OAM frame for the nav lock sprite based on the security level
+.macro nav_lock_oam_frame, level
+    .dh 4
+    ; - 32x32 L and left half of hyphen
+    .dh 100h - 10h, (2 << 14) | (200h - 20h), 200h
+    ; - 8x16 Right half of hyphen
+    .dh (2 << 14) | (100h - 8), 0, 224h
+    ; - 16x32 Left part of number
+    .dh (2 << 14) | (100h - 10h), (2 << 14) | 8, 205h + (level * 3)
+    ; - 8x32 Right edge of number
+    .dh (2 << 14) | (100h - 10h), (1 << 14) | 18h, 207h + (level * 3)
+.endmacro

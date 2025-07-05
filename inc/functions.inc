@@ -15,6 +15,9 @@ ResetMusicVolume equ 08003C84h ; Reset volume after pausing
 
 Samus_SetPose equ 08008FA0h
 
+LoadNewSpriteGfx equ 0800F8ACh
+LoadNewSpritePal equ 0800F8F0h
+SpawnSecondarySprite equ 0800FAE0h
 SpawnPrimarySprite equ 0800FBC8h
 Nightmare_MakeMissilesFall equ 0805DD40h
 
