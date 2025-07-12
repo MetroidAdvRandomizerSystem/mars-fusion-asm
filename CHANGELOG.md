@@ -2,6 +2,7 @@
 
 ## Unreleased - 2025-XX-XX
 - Fixed: Major item jingle no longer plays for message banners unrelated to item acquisition.
+- Fixed: When Revealed Hidden Tiles is enabled, the item in Zazabi speedway no longer appears as a completely blank tile.
 
 ## 0.7.0 - 2025-07-11
 - Fixed: Horizontal Extendable pillars in Pillar Highway will no longer have glitchy graphics after extending and overlapping with certain arrows when revealed tiles are enabled.
