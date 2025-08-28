@@ -37,7 +37,9 @@
 .include "src/nonlinear/room-edits/sector-1/room-0C.s"
 .include "src/nonlinear/room-edits/sector-1/room-0F.s"
 .include "src/nonlinear/room-edits/sector-1/room-14.s"
+.include "src/nonlinear/room-edits/sector-1/room-15.s"
 .include "src/nonlinear/room-edits/sector-1/room-1A.s"
+.include "src/nonlinear/room-edits/sector-1/room-22.s"
 .include "src/nonlinear/room-edits/sector-1/room-25.s"
 .include "src/nonlinear/room-edits/sector-1/room-26.s"
 .include "src/nonlinear/room-edits/sector-1/room-2E.s"
@@ -98,11 +100,14 @@
 .include "src/nonlinear/room-edits/sector-5/room-24.s"
 .include "src/nonlinear/room-edits/sector-5/room-27-28.s"
 .include "src/nonlinear/room-edits/sector-5/room-2B.s"
+.include "src/nonlinear/room-edits/sector-5/room-2D.s"
 
 
 ; Sector 6 (NOC) Changes
 .include "src/nonlinear/room-edits/sector-6/scrolls.s"
+.include "src/nonlinear/room-edits/sector-6/room-03.s"
 .include "src/nonlinear/room-edits/sector-6/room-07.s"
+.include "src/nonlinear/room-edits/sector-6/room-0A.s"
 .include "src/nonlinear/room-edits/sector-6/room-0C.s"
 .include "src/nonlinear/room-edits/sector-6/room-10.s"
 .include "src/nonlinear/room-edits/sector-6/room-18.s"

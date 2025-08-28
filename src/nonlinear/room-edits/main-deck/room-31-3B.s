@@ -1,5 +1,6 @@
 ; Main Deck - Central Reactor Core
-; add platform between door to Silo Access and door to Silo Scaffolding A
+; Add platform between door to Silo Access and door to Silo Scaffolding A
+; Also move the Silo Tunnel back by one tile to prevent weird behaviour in Entrance Rando.
 .org readptr(MainDeckLevels + 31h * LevelMeta_Size + LevelMeta_Bg1)
 .area 4C3h
 .incbin "data/rooms/S0-31-BG1.rlebg"
@@ -36,7 +37,15 @@
 .defineregion readptr(MainDeckLevels + 3Bh * LevelMeta_Size + LevelMeta_Bg1), 457h
 .defineregion readptr(MainDeckLevels + 3Bh * LevelMeta_Size + LevelMeta_Clipdata), 16Ah
 
-; remove event-based transitions to wrecked Silo Access
+; Move Silo Tunnel door back by a tile
+.org MainDeckDoors + 7Dh * DoorEntry_Size + DoorEntry_XStart
+.area 2
+    .db     01h
+    .db     01h
+.endarea
+
+
+; Remove event-based transitions to wrecked Silo Access
 .if RANDOMIZER
 .org MainDeckDoors + 86h * DoorEntry_Size + DoorEntry_Type
 .area 1
