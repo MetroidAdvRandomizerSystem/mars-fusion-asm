@@ -193,6 +193,10 @@ Tank_PowerBombs equ 3
 Tank_MissileDataIncrement equ 4
 Tank_PowerBombDataIncrement equ 5
 
+SamusPose_Running equ 03h
+SamusPose_Morphing equ 0Ch
+SamusPose_Unmorphing equ 0Fh
+SamusPose_MorphBallMidAir equ 10h
 SamusPose_WallJumping equ 16h
 SamusPose_ScrewAttacking equ 1Eh
 SamusPose_Dying equ 3Eh
@@ -202,6 +206,8 @@ StandingFlag_Ground equ 00h
 StandingFlag_Sprite equ 01h
 StandingFlag_Midair equ 02h
 StandingFlag_NoControl equ 03h
+
+SoundEffect_Morph equ 7Fh
 
 SecurityLevel_Lv0 equ 0 ; Gray doors
 SecurityLevel_Lv1 equ 1 ; Blue doors

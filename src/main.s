@@ -13,6 +13,9 @@
 .ifndef QOL
 .definelabel QOL, 1
 .endif
+.ifndef INSTANT_UNMORPH
+.definelabel INSTANT_UNMORPH, 0
+.endif
 .ifndef ACCESSIBILITY
 .definelabel ACCESSIBILITY, 0
 .endif
@@ -129,6 +132,11 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .endif
 .include "src/qol/unhidden-pillars.s"
 
+.endif
+
+; Instant Unmorph Patch
+.if INSTANT_UNMORPH
+.include "src/physics/instant-morph.s"
 .endif
 
 ; Accessibility patches
