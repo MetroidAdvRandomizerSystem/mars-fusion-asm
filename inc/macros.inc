@@ -40,6 +40,10 @@
     bl      lr
 .endmacro
 
+.macro bkpt
+    mov     r11, r11
+.endmacro
+
 ; create an RGB555 color from an RGB888 hex code
 .expfunc color(hex), (((hex & 0FFh) * 31 / 255) << 10) \
     | (((hex >> 8h & 0FFh) * 31 / 255) << 5) \

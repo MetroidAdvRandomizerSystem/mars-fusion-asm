@@ -4,7 +4,7 @@ Sfx_Play equ 0800270Ch
 Sfx_Stop equ 08002738h
 StopAllMusicAndSounds equ 08002774h
 Sfx_PlayIfNotPlaying equ 08002854h
-BitFill equ 08002FECh
+BitFill equ 08002FECh ; r0=DMA Channel, r1=Value, r2=*DST, r3=len, [sp]=bitSize
 Sfx_ResumeAll equ 08003338h ; r0 = bool?
 Music_CheckSet equ 08003498h
 Music_CheckPlay equ 080034F4h
@@ -40,6 +40,8 @@ MapScreenCountTanks equ 08075D28h
 InitStartingMap equ 08074FFCh
 NewGameInit equ 080803E4h
 
+DrawHudEnergy equ 08071C4Ch
+
 GetCharWidth equ 08079118h
 RenderChar equ 08079438h
 
@@ -72,6 +74,8 @@ Sprite_CreatePlasmaDebris equ 080831C4h
 FileSelectDrawAllOam equ 080A1208h
 
 Divide equ 080A3468h
+DivideUnsigned equ 080A3614h
+ModuloUnsigned equ 080A368Ch
 memcpy equ 080A4EF0h
 memset equ 080A4F50h
 

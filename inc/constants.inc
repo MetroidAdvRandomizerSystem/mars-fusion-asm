@@ -71,6 +71,11 @@ DMA_TIMING_SPECIAL      equ 3 << 12 + DMA_CNT_H
 DMA_IRQ_ENABLE          equ 1 << 14 + DMA_CNT_H
 DMA_ENABLE              equ 1 << 15 + DMA_CNT_H
 
+VRAM equ 06000000h
+GFX_ROW equ 400h
+GFX_TILE equ 20h
+
+
 ; non-vanilla constants
 
 MissileCooldown equ 9

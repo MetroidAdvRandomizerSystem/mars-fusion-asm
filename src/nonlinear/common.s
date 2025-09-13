@@ -237,6 +237,11 @@
     sub     r1, r0
     asr     r1, #1Fh
     orr     r0, r1
+    ldr     r1, =#9999
+    cmp     r0, r1      ; if health > 9999
+    bls     @@setHealth
+    mov     r0, r1      ; cap health at 9999
+@@setHealth:
     strh    r0, [r4, SamusUpgrades_MaxEnergy]
     strh    r0, [r4, SamusUpgrades_CurrEnergy]
     mov     r0, #Message_EnergyTankUpgrade

@@ -675,6 +675,24 @@ BrokenBlock_XPos equ 02h
 BrokenBlock_YPos equ 03h
 .sym on
 
+AmmoDigitsGfx equ 083E7A9Ch
+AmmoDigitsGfxWRAM equ 03000912h
+.sym off
+AmmoDigitsGfx_Normal equ 0
+AmmoDigitsGfx_Alt equ 083E7C1Ch - 083E7A9Ch
+AmmoDigitsGfx_Selected equ 083E7D9Ch - 083E7A9Ch
+.sym on
+
+EnergyDigitsGfx equ 083E7F1Ch
+EnergyDigits equ 030008C7h
+MaxEnergyDigits equ 030008CBh
+.sym off
+EnergyDigits_Ones equ 0
+EnergyDigits_Tens equ 1
+EnergyDigits_Hundreds equ 2
+EnergyDigits_Thousands equ 3
+.sym on
+
 ; non-vanilla structs:
 
 UpgradeLookup equ 03001800h
@@ -752,5 +770,12 @@ ItemJingleFlag:
 ReloadWeaponGfxFlag:
     .skip 1
 
+; used for if health > 2099
+ExcessEnergyFlag:
+    .skip 1
+
+    .align 4
+MaxEnergyDigitsGfxWRAM:
+    .skip 30h
 .headersize 08000000h
 .org 08000000h
