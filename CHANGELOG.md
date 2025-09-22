@@ -2,6 +2,10 @@
 
 ## Unreleased - 2025-??-??
 
+## 0.9.1 - 2025-09-23
+
+- Changed: Hopefully made the patches not crash the game when they're being applied.
+
 ## 0.9.0 - 2025-09-19
 
 - Added: An optional compile that repurposes the SELECT button to an instant (un)morph button.

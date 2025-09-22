@@ -142,11 +142,6 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/a11y/accessible-flashing.s"
 .endif
 
-; Instant Unmorph Patch
-.if INSTANT_UNMORPH
-.include "src/physics/instant-morph.s"
-.endif
-
 ; Non-linearity patches
 ; Patches which mitigate or remove linear story restrictions
 ; Forced if randomizer flag is on
@@ -200,6 +195,13 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/nonlinear/tileset-edits.s"
 .include "src/randomizer/title-screen.s"
 .include "src/randomizer/room-name-display.s"
+.endif
+
+
+; Instant Unmorph Patch
+; FIXME: last because of whacky autoregions making multiple ips patches not apply-able anymore
+.if INSTANT_UNMORPH
+.include "src/physics/instant-morph.s"
 .endif
 
 .close
