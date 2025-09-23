@@ -3,6 +3,7 @@ This repository contains the ASM changes needed in order to build a new Metroid 
 To actually randomize things, you will need to use the [Python patcher](https://github.com/MetroidAdvRandomizerSystem/mars-patcher) instead.
 
 ### Running from Source
+test
 
 #### Prerequisites
 
