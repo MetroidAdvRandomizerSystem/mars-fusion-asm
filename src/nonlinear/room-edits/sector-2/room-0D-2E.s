@@ -1,6 +1,7 @@
 ; Sector 2 - Cathedral
 ; make door to reo room functional
 ; remove hatch to ripper roost
+; remove hatch to save station access
 ; move zoro out of the way of ripper roost
 ; move cocoon and kihunter spritesets to intact room state
 ; limit zoro pathing to prevent climbing the room early with ice beam
@@ -14,6 +15,16 @@
 @S2_CentralShaft_Clipdata:
 .incbin "data/rooms/S2-0D-Clip.rlebg"
 .endautoregion
+
+.org readptr(Sector2Levels + 2Eh * LevelMeta_Size + LevelMeta_Bg1)
+.area 4F4h
+.incbin "data/rooms/S2-2E-BG1.rlebg"
+.endarea
+
+.org readptr(Sector2Levels + 2Eh * LevelMeta_Size + LevelMeta_Clipdata)
+.area 1FDh
+.incbin "data/rooms/S2-2E-Clip.rlebg"
+.endarea
 
 .autoregion
 @S2_CentralShaft_KihunterSpriteset:
