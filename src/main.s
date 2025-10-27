@@ -36,6 +36,9 @@
 .ifndef UNHIDDEN_MAP_DOORS
 .definelabel UNHIDDEN_MAP_DOORS, 0
 .endif
+.ifndef NERF_GERON_WEAKNESS
+.definelabel NERF_GERON_WEAKNESS, 0
+.endif
 .sym on
 
 FreeIWRam equ 03005630h
@@ -173,6 +176,9 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/nonlinear/split-suits.s"
 .include "src/nonlinear/story-flags.s"
 
+.if NERF_GERON_WEAKNESS
+.include "src/nonlinear/nerf-geron-weakness.s"
+.endif
 
 .if !DEBUG
 .include "src/nonlinear/item-select.s"

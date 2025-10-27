@@ -54,7 +54,7 @@ MorphBallAbility_Id equ 03Fh
 XParasiteBossFormation_Id equ 040h
 XBarrierCoreNormal1_Id equ 041h
 XBarrierCoreNormal2_Id equ 042h
-XBarrierCore3_Id equ 043h
+XBarrierCoreNormal3_Id equ 043h
 HiJumpAbility_Id equ 044h
 SpeedBoosterAbility_Id equ 045h
 VariaSuitAbility_Id equ 046h

@@ -6,6 +6,7 @@
 - Fixed: Energy values over 2099 are now capped on the file screen to only show 20 E-tanks. A new `+` indicator will show next to your energy if you have more than 2099 max energy.
 - Changed: For debug builds, the debug menu now allows editing energy values up to 9999.
 - Added: Ability for patcher to indicate that new Excess Energy HUD layout always be used over Vanilla Energy HUD layout.
+- Added: Option to nerf Geron weaknesses to the "intended" values.
 
 ### Room Adjustments
 

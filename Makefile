@@ -18,6 +18,7 @@ OPTIONALS += missiles_without_mains
 OPTIONALS += unhidden_map
 OPTIONALS += unhidden_map_doors
 OPTIONALS += accessibility
+OPTIONALS += nerf_geron_weakness
 
 OBJS := $(OPTIONALS:%=$(OBJ_DIR)/%.gba)
 PATCHES := $(OPTIONALS:%=$(BIN_DIR)/%.ips)
