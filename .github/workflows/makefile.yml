@@ -14,7 +14,6 @@ jobs:
     strategy:
       matrix:
         config:
-          - mode: randomizer
             zip-name: Randomizer Patches
             
     runs-on: self-hosted
@@ -26,7 +25,7 @@ jobs:
       run: cp --no-preserve=mode $METROID_FUSION_U_PATH ./metroid4.gba
 
     - name: Run make
-      run: make dist AS=armips FLIPS=flips BUILD_TYPE=release MODIFICATION_MODE=${{ matrix.config.mode }}
+      run: make dist AS=armips FLIPS=flips BUILD_TYPE=release
 
     - name: Remove ROM
       run: rm ./bin/m4rs.gba

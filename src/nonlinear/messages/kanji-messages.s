@@ -31,13 +31,8 @@ KanjiMessages:
     .dw     @Message_LastInfantMetroid
     .dw     086B3962h   ; is your objective clear?
     .dw     086B3988h   ; confirm mission objective?
-.if RANDOMIZER
     .dw     @Message_WarpToStartLine1
     .dw     @Message_WarpToStartLine2
-.else
-    .dw     086B39ACh   ; sleep mode line 1
-    .dw     086B39ECh   ; sleep mode line 2
-.endif
     .dw     086B3A2Ch   ; sleep mode line 3
     .dw     086B3602h   ; atmospheric stabilizer 1
     .dw     086B3630h   ; atmospheric stabilizer 2
@@ -49,11 +44,7 @@ KanjiMessages:
     .dw     086B370Eh   ; animals freed
     .dw     086B372Eh   ; auxiliary power
     .dw     086B374Ah   ; restricted sector detaching
-.if RANDOMIZER
     .dw     @Message_EscapeSequenceStart
-.else
-    .dw     086B3776h   ; escape sequence starting
-.endif
     .dw     086B37B4h   ; save prompt
     .dw     086B37DAh   ; save complete
     .dw     086B37ECh   ; adam uplink prompt
@@ -130,7 +121,6 @@ KanjiMessages:
     .string  14, "[INDENT]Return to Operations Deck."
 .endautoregion
 
-.if RANDOMIZER
 .defineregion 086B5A18h, 60h
 .defineregion 086B5A78h, 72h
 
@@ -154,4 +144,3 @@ KanjiMessages:
     .stringn 19, "[INDENT]Orbit change implemented.\n"
     .string  41, "[INDENT]Escape the station."
 .endautoregion
-.endif

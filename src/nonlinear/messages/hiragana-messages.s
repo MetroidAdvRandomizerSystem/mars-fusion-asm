@@ -31,13 +31,8 @@ HiraganaMessages:
     .dw     @Message_LastInfantMetroid
     .dw     086B45FCh   ; is your objective clear?
     .dw     086B4622h   ; confirm mission objective?
-.if RANDOMIZER
     .dw     @Message_WarpToStartLine1
     .dw     @Message_WarpToStartLine2
-.else
-    .dw     086B4646h   ; sleep mode line 1
-    .dw     086B4686h   ; sleep mode line 2
-.endif
     .dw     086B46C6h   ; sleep mode line 3
     .dw     086B42A0h   ; atmospheric stabilizer 1
     .dw     086B42CEh   ; atmospheric stabilizer 2
@@ -49,11 +44,7 @@ HiraganaMessages:
     .dw     086B43ACh   ; animals freed
     .dw     086B43CCh   ; auxiliary power
     .dw     086B43E8h   ; restricted sector detaching
-.if RANDOMIZER
     .dw     @Message_EscapeSequenceStart
-.else
-    .dw     086B4414h   ; escape sequence starting
-.endif
     .dw     086B4454h   ; save prompt
     .dw     086B447Ah   ; save complete
     .dw     086B448Ch   ; adam uplink prompt
@@ -130,7 +121,6 @@ HiraganaMessages:
     .string  14, "[INDENT]Return to Operations Deck."
 .endautoregion
 
-.if RANDOMIZER
 .defineregion 086B5A18h, 60h
 .defineregion 086B5A78h, 72h
 
@@ -154,4 +144,3 @@ HiraganaMessages:
     .stringn 19, "[INDENT]Orbit change implemented.\n"
     .string  41, "[INDENT]Escape the station."
 .endautoregion
-.endif

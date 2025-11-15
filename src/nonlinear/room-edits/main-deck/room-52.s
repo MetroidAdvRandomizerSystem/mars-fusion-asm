@@ -11,9 +11,7 @@
 .incbin "data/rooms/S0-52-Clip.rlebg"
 .endarea
 
-.if RANDOMIZER
 .org MainDeckDoors + 0C2h * DoorEntry_Size + DoorEntry_Type
 .area 1
     .db     DoorType_LockableHatch
 .endarea
-.endif

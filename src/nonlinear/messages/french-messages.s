@@ -31,13 +31,8 @@ FrenchMessages:
     .dw     @Message_LastInfantMetroid
     .dw     086B86BAh   ; is your objective clear?
     .dw     086B8706h   ; confirm mission objective?
-.if RANDOMIZER
     .dw     @Message_WarpToStartLine1
     .dw     @Message_WarpToStartLine2
-.else
-    .dw     086B8752h   ; sleep mode line 1
-    .dw     086B87C0h   ; sleep mode line 2
-.endif
     .dw     086B882Eh   ; sleep mode line 3
     .dw     086B7EC2h   ; atmospheric stabilizer 1
     .dw     086B7F32h   ; atmospheric stabilizer 2
@@ -49,11 +44,7 @@ FrenchMessages:
     .dw     086B816Ch   ; animals freed
     .dw     086B81C0h   ; auxiliary power
     .dw     086B8200h   ; restricted sector detaching
-.if RANDOMIZER
     .dw     @Message_EscapeSequenceStart
-.else
-    .dw     086B826Ch   ; escape sequence starting
-.endif
     .dw     086B82E8h   ; save prompt
     .dw     086B8332h   ; save complete
     .dw     086B8362h   ; adam uplink prompt
@@ -130,7 +121,6 @@ FrenchMessages:
     .string  14, "[INDENT]Return to Operations Deck."
 .endautoregion
 
-.if RANDOMIZER
 .defineregion 086B5A18h, 60h
 .defineregion 086B5A78h, 72h
 
@@ -154,4 +144,3 @@ FrenchMessages:
     .stringn 19, "[INDENT]Orbit change implemented.\n"
     .string  41, "[INDENT]Escape the station."
 .endautoregion
-.endif

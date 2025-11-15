@@ -148,14 +148,12 @@
     ldrb    r0, [r0]
     cmp     r0, #0
     bne     @@exit
-.if RANDOMIZER
     ldr     r1, =RoomTanks
     mov     r0, #0
     mvn     r0, r0
     str     r0, [r1, #00h]
     str     r0, [r1, #04h]
     str     r0, [r1, #08h]
-.endif
     bl      GetLoadedRoomItems
     mov     r5, r0
     cmp     r0, #0
@@ -170,11 +168,7 @@
     mov     r0, r5
     bl      IsItemCollected
     cmp     r0, #0
-.if RANDOMIZER
     beq     @@load_tank_gfx
-.else
-    beq     @@loop_inc
-.endif
     ; item collected, delete from the loaded map
     ldrb    r0, [r4, MinorLocation_YPos]
     ldr     r3, =LevelLayers
@@ -200,11 +194,9 @@
 @@set_bg1:
     strh    r0, [r3, r2]
     b       @@loop_inc
-.if RANDOMIZER
 @@load_tank_gfx:
     mov     r0, r5
     bl      LoadTankGfx
-.endif
 @@loop_inc:
     add     r5, #1
     ldr     r4, =MinorLocations

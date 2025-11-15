@@ -258,7 +258,6 @@
 .org 0802AAE0h
 .area 10h, 0
     ; spawn countdown for lategame messages
-.if RANDOMIZER
     cmp     r6, #Message_EscapeSequence - (Message_AtmosphericStabilizer1 - 1)
     bne     @@check_restricted_sector_detach
     bl      StartEscapeSequence
@@ -266,12 +265,6 @@
     cmp     r6, #Message_RestrictedSectorDetachment - (Message_AtmosphericStabilizer1 - 1)
     bne     0802AAF0h
     bl      08072B4Ch
-.else
-    mov     r0, r6
-    sub     r0, #Message_RestrictedSectorDetachment - (Message_AtmosphericStabilizer1 - 1)
-    cmp     r0, #Message_EscapeSequence - Message_RestrictedSectorDetachment
-    bhi     0802AAF0h
-.endif
 .endarea
 
 .org 0802AAF0h

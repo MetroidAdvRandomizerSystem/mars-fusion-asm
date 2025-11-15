@@ -46,9 +46,7 @@
 
 
 ; Remove event-based transitions to wrecked Silo Access
-.if RANDOMIZER
 .org MainDeckDoors + 86h * DoorEntry_Size + DoorEntry_Type
 .area 1
     .db     DoorType_OpenHatch | DoorType_ShowsLocationName
 .endarea
-.endif

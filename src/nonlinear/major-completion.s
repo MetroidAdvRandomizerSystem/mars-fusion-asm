@@ -74,7 +74,7 @@
     ; total items = 118 in vanilla, 116 in MFOR, +4 for security levels
     mov     r1, #100
     mul     r0, r1
-    mov     r1, #MinorLocations_Len + MajorLocations_Len - (RANDOMIZER ? 1 : 0)
+    mov     r1, #MinorLocations_Len + MajorLocations_Len - 1
     bl      Divide
     sub     r0, #100        ; \
     asr     r1, r0, #1Fh    ; | maximum of 100

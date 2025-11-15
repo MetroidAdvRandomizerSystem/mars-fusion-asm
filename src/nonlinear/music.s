@@ -173,26 +173,6 @@
     mov     r2, #10
     b       @@tryPlay
 @@case_MainDeck_check4D:
-.if !RANDOMIZER
-    ; restricted sector tube
-    cmp     r6, #4Dh
-    bne     @@case_MainDeck_check4F
-    ldr     r1, =CurrEvent
-    ldrb    r0, [r1]
-    cmp     r0, #Event_RestrictedSectorDetachment
-    blt     @@case_MainDeck_break
-    mov     r0, #Event_GameStart
-    strb    r0, [r1]
-    b       @@case_MainDeck_break
-@@case_MainDeck_check4F:
-    ; restricted sector last room
-    cmp     r6, #4Eh
-    bne     @@case_MainDeck_check52
-    ldr     r1, =CurrEvent
-    mov     r0, #Event_XboxAbsorbed
-    strb    r0, [r1]
-    b       @@case_MainDeck_break
-.endif
 @@case_MainDeck_check52:
     ; operations room
     cmp     r6, #52h
@@ -451,11 +431,7 @@
     bne     @@return_true
     cmp     r6, #3Fh
     bne     @@return_true
-.if RANDOMIZER
     bl      08072B4Ch
-.else
-    nop :: nop
-.endif
     mov     r0, MusicTrack_EnvironmentalShock
     mov     r1, MusicType_BossMusic
     mov     r2, #0

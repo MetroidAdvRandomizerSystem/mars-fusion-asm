@@ -1,6 +1,5 @@
 ; Main Deck - Docking Bay Climb
 ; remove event-based transitions to wrecked Silo Access
-.if RANDOMIZER
 .org MainDeckDoors + 0Dh * DoorEntry_Size + DoorEntry_Type
 .area 1
     .db     DoorType_NoHatch
@@ -10,4 +9,3 @@
 .area 1
     .db     DoorType_LockableHatch
 .endarea
-.endif

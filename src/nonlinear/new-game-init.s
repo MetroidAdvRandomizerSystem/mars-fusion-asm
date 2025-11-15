@@ -72,7 +72,6 @@
     ldr     r1, =0300004Ch
     strb    r0, [r1]
     strb    r0, [r1, #1]
-.if RANDOMIZER
     ldr     r1, =StartingLocation
     ldr     r2, =CurrArea
     ldrb    r0, [r1, StartingLocation_Area]
@@ -97,24 +96,6 @@
     mov     r0, #0
     ldr     r1, =0300134Ah
     strb    r0, [r1]
-.else
-    mov     r0, #0
-    ldr     r1, =CurrArea
-    strb    r0, [r1]
-    strb    r0, [r1, CurrRoom - CurrArea]
-    strb    r0, [r1, PrevDoor - CurrArea]
-    ldr     r1, =SamusState
-    mov     r2, r1
-    add     r2, #03001342h - SamusState
-    mov     r0, #640h >> 3
-    lsl     r0, #3
-    strh    r0, [r1, SamusState_PositionX]
-    strh    r0, [r2]
-    mov     r0, #0FFh
-    add     r0, #1DFh - 0FFh
-    strh    r0, [r1, SamusState_PositionY]
-    strh    r0, [r2, #2]
-.endif
 @@init_map:
     bl      InitStartingMap
     mov     r0, #0
@@ -142,11 +123,9 @@
     strh    r0, [r2, SaveMeta_MaxMissiles]
     ldrb    r0, [r1, SamusUpgrades_SuitUpgrades]
     strb    r0, [r2, SaveMeta_SuitUpgrades]
-.if RANDOMIZER
     ldr     r1, =StartingLocation
     ldrb    r0, [r1, StartingLocation_Area]
     strb    r0, [r2, SaveMeta_Area]
-.endif
     strb    r3, [r2, SaveMeta_Exists]
     strb    r3, [r2, SaveMeta_Event]
     strb    r3, [r2, SaveMeta_IgtHours]

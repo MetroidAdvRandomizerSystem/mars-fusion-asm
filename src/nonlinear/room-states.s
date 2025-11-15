@@ -106,16 +106,7 @@
     ; operations deck elevator sabotaged
     ; spritesets: S0-3C
     ; room states: S0-0D => S0-4A
-.if !RANDOMIZER
-    ldr     r0, [r3, MiscProgress_MajorLocations]
-    lsr     r1, r0, #MajorLocation_MainDeckData
-    lsr     r0, #MajorLocation_Arachnus
-    bic     r0, r1
-    mov     r1, #1
-    and     r0, r1
-.else
     mov     r0, #0
-.endif
     bx      lr
 @@case_0A:
     ; arachnus defeated
@@ -128,9 +119,7 @@
 @@case_0D:
     ; TODO (non-rando): main deck elevator door destroyed by SA-X
     ; room states: S0-29 => S0-2A, S0-4A => S0-0D
-.if RANDOMIZER
     mov     r0, #1
-.endif
     bx      lr
 @@case_0F:
     ; charge core-x defeated
@@ -180,21 +169,12 @@
 @@case_21:
     ; TODO (non-rando): sector 4 complete, gold crab locks inactive
     ; spritesets: S4-05
-.if RANDOMIZER
     mov     r0, #1
-.endif
     bx      lr
 @@case_23:
     ; green doors unlocked, sector 3 awakened
     ; spritesets: S3-00, S3-03, S3-05, S3-06, S3-0A, S3-1B, S3-1E
-.if RANDOMIZER
     mov     r0, #1
-.else
-    ldr     r1, =SamusUpgrades
-    ldrb    r0, [r1, SamusUpgrades_SecurityLevel]
-    lsl     r0, #1Fh - SecurityLevel_Lv2
-    lsr     r0, #1Fh
-.endif
     bx      lr
 @@case_28:
     ; box defeated
@@ -209,9 +189,7 @@
 @@case_31:
     ; TODO (non-rando): escaped sector 6 SA-X
     ; spritesets: S6-1C
-.if RANDOMIZER
     mov     r0, #1
-.endif
     bx      lr
 @@case_32:
     ; sector 6 data room destroyed
@@ -235,10 +213,8 @@
 @@case_3A:
     ; downloaded ice missiles
     ; spritesets: S5-08, S5-18, S5-27
-.if RANDOMIZER
     ; maybe split S5-18 and S5-27
     mov     r0, #0
-.endif
     bx      lr
 @@case_3D:
     ; boiler cooling reactivated
@@ -252,9 +228,7 @@
 @@case_3E:
     ; save the animals
     ; spritesets: S0-0C, S0-12, S0-18
-.if RANDOMIZER
     mov     r0, #0
-.endif
     bx      lr
 @@case_42:
     ; downloaded power bombs
@@ -267,29 +241,23 @@
 @@case_44:
     ; escaped sector 5 SA-X
     ; spritesets: S5-2B
-.if RANDOMIZER
     mov     r0, #1
-.endif
     bx      lr
 @@case_46:
     ; main reactor shutdown
     ; spritesets: S0-15
     ; room states: S0-2B => S0-22
-.if RANDOMIZER
     mov     r0, #0
-.endif
     bx      lr
 @@case_47:
     ; en route to main reactor
     ; spritesets: S0-06, S0-30, S2-00, S2-04, S2-05, S2-09, S2-0A, S2-11,
     ;             S2-13, S2-1E, S2-1F, S2-2C, S2-2E
-.if RANDOMIZER
     ldr     r0, [r3, MiscProgress_MajorLocations]
     lsl     r1, r0, #1Fh - MajorLocation_Yakuza
     lsl     r0, #1Fh - MajorLocation_Nettori
     orr     r0, r1
     lsr     r0, #1Fh
-.endif
     bx      lr
 @@case_49:
     ; yakuza defeated
@@ -304,9 +272,7 @@
 @@case_4D:
     ; escaped main reactor SA-X
     ; spritesets: S2-3B
-.if RANDOMIZER
     mov     r0, #1
-.endif
     bx      lr
 @@case_4E:
     ; nettori defeated
@@ -328,12 +294,10 @@
 @@case_59:
     ; no entry without authorization
     ; spritesets: S6-10
-.if RANDOMIZER
     ldr     r0, [r3, MiscProgress_MajorLocations]
     mvn     r0, r0
     lsl     r0, #1Fh - MajorLocation_XBox
     lsr     r0, #1Fh
-.endif
     bx      lr
 @@case_5B:
     ; xbox defeated
@@ -353,13 +317,7 @@
 @@case_5F:
     ; restricted sector detached
     ; room states: S0-4D => S0-11
-.if RANDOMIZER
     mov     r0, #1
-.else
-    ldrh    r0, [r3, MiscProgress_StoryFlags]
-    lsl     r0, #1Fh - StoryFlag_RestrictedSectorDetached
-    lsr     r0, #1Fh
-.endif
     bx      lr
 @@case_60:
     ; ridley defeated
@@ -373,16 +331,12 @@
     ; permission for orbit change granted
     ; spritesets: S0-0C, S0-0D, S0-0E, S0-15
     ; room states: S0-0D => S0-55
-.if RANDOMIZER
     ldrb    r0, [r2, PermanentUpgrades_InfantMetroids]
     ldr     r2, =RequiredMetroidCount
     ldrb    r2, [r2]
     cmp     r0, r2
     bge     @@return_true
     b       @@return_false
-.else
-    bx      lr
-.endif
 @@case_66:
     ; sa-x defeated
     ; locks: S0-06 -> S0-52
