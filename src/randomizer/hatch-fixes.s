@@ -77,7 +77,7 @@
     push    { r0 - r3 }
     ; Some event rooms use #1 in the timer to set events. #2 will only be in the timer during an actual event unlock
     ; This will technically change the hatches one frame early
-    cmp     r0, #2 
+    cmp     r0, #2
     bne     @@return
     ldr     r2, =HatchData
     mov     r3, #0 ; Loop counter
@@ -112,11 +112,11 @@
     ldrb    r0, [r2, HatchData_Status]
     ; Clear Animation Information
     lsr     r0, #4
-    lsl     r0, #4 
-    mov     r1, #9h 
+    lsl     r0, #4
+    mov     r1, #9h
     orr     r1, r0
     strb    r1, [r2, HatchData_Status]
-    mov     r1, #3 
+    mov     r1, #3
     strb    r1, [r2, HatchData_Animation]
 @@loopIncrement:
     add     r2, #4
@@ -143,9 +143,26 @@
     nop
 .endarea
 
+
+.org DetermineNavigationHatchesToLockForNavigationConversation
+; Always show hatch bulkheads when talking to the computer in a Nav Room
+.region 3Ch, 0
+    push    { lr }
+    mov     r0, #00 ; No Doors to lock
+    ldr     r1, =CurrentNavRoom
+    ldrb    r1, [r1]
+    cmp     r1, #00 ; Check if Nav room is the Gunship Hangar
+    beq     @@return
+    mov     r0, #03 ; LeftDoor | RightDoor
+@@return:
+    pop     { r1 }
+    bx      r1
+    .pool
+.endregion
+
+
 ; Change the Palette for the Event Door Graphic used in Nav Room conversations.
 .org 08565BC8h
 .area 32
     .incbin "data/nav-cutscene-gray-door.bin"
 .endarea
-

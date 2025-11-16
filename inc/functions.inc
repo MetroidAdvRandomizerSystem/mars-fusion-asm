@@ -42,6 +42,8 @@ NewGameInit equ 080803E4h
 
 DrawHudEnergy equ 08071C4Ch
 
+DetermineNavigationHatchesToLockForNavigationConversation equ 08065618h
+
 GetCharWidth equ 08079118h
 RenderChar equ 08079438h
 
