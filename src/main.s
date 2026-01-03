@@ -8,15 +8,16 @@
 .ifndef DEBUG
 .definelabel DEBUG, 1
 .endif
-.ifndef OPTIMIZE
-.definelabel OPTIMIZE, 1
-.endif
 .ifndef QOL
 .definelabel QOL, 1
 .endif
 .ifndef ACCESSIBILITY
 .definelabel ACCESSIBILITY, 0
 .endif
+.ifndef RANDOMIZER
+.definelabel RANDOMIZER, 1
+.endif
+
 .ifndef BOMBLESS_PBS
 .definelabel BOMBLESS_PBS, 0
 .endif
@@ -96,10 +97,9 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 
 ; Optimization patches
 ; Patches intended to produce identical behavior to vanilla, but optimized
-.if OPTIMIZE
 .notice "Applying optimization patches..."
+.include "src/optimization/item-check.s"
 .include "src/optimization/power-bomb-explosion.s"
-.endif
 
 ; Quality of life patches
 ; Patches providing non-essential but convenient features
@@ -140,6 +140,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 ; Non-linearity patches
 ; Patches which mitigate or remove linear story restrictions
 ; Forced if randomizer flag is on
+.if RANDOMIZER
 .notice "Applying non-linearity patches..."
 .include "src/nonlinear/common.s"
 .include "src/nonlinear/hud-edits.s"
@@ -164,7 +165,6 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/physics/single-walljump.s"
 .include "src/nonlinear/split-suits.s"
 .include "src/nonlinear/story-flags.s"
-; End non-linearity patches
 
 .if NERF_GERON_WEAKNESS
 .include "src/nonlinear/nerf-geron-weakness.s"
@@ -176,11 +176,12 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .if BOMBLESS_PBS
 .include "src/nonlinear/bombless-pbs.s"
 .endif
+.endif
 
 ; Randomizer patches
 ; Patches making randomization of the game possible
+.if RANDOMIZER
 .notice "Applying randomizer patches..."
-.include "src/optimization/item-check.s"
 .include "src/randomizer/credits.s"
 .include "src/randomizer/hatch-fixes.s"
 .include "src/randomizer/hints.s"
@@ -193,6 +194,6 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/nonlinear/tileset-edits.s"
 .include "src/randomizer/title-screen.s"
 .include "src/randomizer/room-name-display.s"
-; End randomizer patches
+.endif
 
 .close
