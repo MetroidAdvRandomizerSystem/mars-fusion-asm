@@ -13,7 +13,6 @@ else
 	AS := armips
 endif
 
-OPTIONALS := bombless_pbs
 OPTIONALS += missiles_without_mains
 OPTIONALS += unhidden_map
 OPTIONALS += unhidden_map_doors

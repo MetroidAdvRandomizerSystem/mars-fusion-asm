@@ -140,11 +140,7 @@
 @@init_bombs:
     ldr     r0, =PermanentUpgrades
     ldrb    r2, [r0, PermanentUpgrades_ExplosiveUpgrades]
-.if BOMBLESS_PBS
     mov     r0, #(1 << ExplosiveUpgrade_Bombs) | (1 << ExplosiveUpgrade_PowerBombs)
-.else
-    mov     r0, #(1 << ExplosiveUpgrade_Bombs)
-.endif
     tst     r0, r2
     beq     @@init_suits
     ldr     r0, =#0B0EAh

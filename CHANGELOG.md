@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-??-??
 
+- Removed: The compilation flag for Bombless PBs. This is now always included.
+
 ## 0.10.0 - 2026-01-03
 - Fixed: Energy values over 2099 now correctly render in-game.
 - Changed: Maximum Energy has been limited to 9999.

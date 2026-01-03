@@ -17,9 +17,6 @@
 .ifndef ACCESSIBILITY
 .definelabel ACCESSIBILITY, 0
 .endif
-.ifndef BOMBLESS_PBS
-.definelabel BOMBLESS_PBS, 0
-.endif
 .ifndef MISSILES_WITHOUT_MAINS
 .definelabel MISSILES_WITHOUT_MAINS, 0
 .endif
@@ -164,6 +161,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/physics/single-walljump.s"
 .include "src/nonlinear/split-suits.s"
 .include "src/nonlinear/story-flags.s"
+.include "src/nonlinear/bombless-pbs.s"
 ; End non-linearity patches
 
 .if NERF_GERON_WEAKNESS
@@ -172,9 +170,6 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 
 .if !DEBUG
 .include "src/nonlinear/item-select.s"
-.endif
-.if BOMBLESS_PBS
-.include "src/nonlinear/bombless-pbs.s"
 .endif
 
 ; Randomizer patches
