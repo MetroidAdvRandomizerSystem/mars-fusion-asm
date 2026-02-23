@@ -2,6 +2,10 @@
 
 ## Unreleased - 2026-03-??
 
+## 0.12.1 - 2026-02-??
+
+- Fixed: The lower left door in Puyo Palace leading to the wrong version of Cathedral.
+
 ## 0.12.0 - 2026-02-20
 - Changed: The hatch graphics have been changed to be more accessible to color blind people.
 - Fixed: HUD no longer occassionally disappears after saving the animals.
