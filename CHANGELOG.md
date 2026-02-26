@@ -2,8 +2,7 @@
 
 ## Unreleased - 2026-03-??
 
-## 0.12.1 - 2026-02-??
-
+## 0.12.1 - 2026-02-26
 - Fixed: The lower left door in Puyo Palace leading to the wrong version of Cathedral.
 
 ## 0.12.0 - 2026-02-20
