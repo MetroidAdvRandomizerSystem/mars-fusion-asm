@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased - 2026-03-??
+- Fixed: Low-Health alarm now plays correctly when using the alternative Health Display.
 
 ## 0.12.0 - 2026-02-20
 - Changed: The hatch graphics have been changed to be more accessible to color blind people.

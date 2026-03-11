@@ -302,8 +302,7 @@ ForceExcessHealthDisplay:
 @@start_draw_max_digits:
     ; Check if we need to reload max digits graphics
     ldr     r0, [sp]
-    mov     r1, #1111b
-    bic     r1, r0
+    cmp     r0, #00h
     beq     @@skip_drawing_max_digits
 
     ; Load "Max" graphics pointers
@@ -468,6 +467,7 @@ ForceExcessHealthDisplay:
     .pool
 
 @@curr_energy:
+    mov     r4, #00h ; Store Bitflag for if current energy changes
     ldr     r5, =EnergyDigits
     ldr     r6, =DMA3
     ldr     r7, =EnergyDigitsGfx
@@ -492,6 +492,8 @@ ForceExcessHealthDisplay:
     ldrb    r1, [r5, EnergyDigits_Thousands]
     cmp     r0, r1
     beq     @@curr_hundreds ; if thousands digit doesn't change, skip DMA
+    mov     r3, #1 << EnergyDigits_Thousands
+    orr     r4, r3          ; Store flag if digit changes
     strb    r0, [r5, EnergyDigits_Thousands]
 @@load_curr_thousands_gfx:
     lsl     r0, #05h        ; r0 * 20h (length of 8x8 tile)
@@ -523,6 +525,8 @@ ForceExcessHealthDisplay:
     ldrb    r1, [r5, EnergyDigits_Hundreds]
     cmp     r0, r1
     beq     @@curr_tens     ; if hundreds digit doesn't change, skip DMA
+    mov     r3, #1 << EnergyDigits_Hundreds
+    orr     r4, r3          ; Store flag if digit changes
     strb    r0, [r5, EnergyDigits_Hundreds]
 @@load_curr_hundreds_gfx:
     lsl     r0, #05h        ; r0 * 20h (length of 8x8 tile)
@@ -554,6 +558,8 @@ ForceExcessHealthDisplay:
     ldrb    r1, [r5, EnergyDigits_Tens]
     cmp     r0, r1
     beq     @@curr_ones     ; if tens digit doesn't change, skip DMA
+    mov     r3, #1 << EnergyDigits_Tens
+    orr     r4, r3          ; Store flag if digit changes
     strb    r0, [r5, EnergyDigits_Tens]
 @@load_curr_tens_gfx:
     lsl     r0, #05h        ; r0 * 20h (length of 8x8 tile)
@@ -580,7 +586,9 @@ ForceExcessHealthDisplay:
 @@check_curr_ones_digit_is_same:
     ldrb    r1, [r5, EnergyDigits_Ones]
     cmp     r0, r1
-    beq     @@return    ; if ones digit doesn't change, skip DMA
+    beq     @@update_lowhealth_flag    ; if ones digit doesn't change, skip DMA
+    mov     r3, #1 << EnergyDigits_Ones
+    orr     r4, r3          ; Store flag if digit changes
     strb    r0, [r5, EnergyDigits_Ones]
 @@load_curr_ones_gfx:
     lsl     r0, #05h    ; r0 * 20h (length of 8x8 tile)
@@ -592,6 +600,25 @@ ForceExcessHealthDisplay:
     str     r2, [r6, DMA_CNT]
     ldr     r0, [r6, DMA_CNT]
 
+    ; Check if we had to update graphics
+@@update_lowhealth_flag:
+    cmp     r4, #00h
+    beq     @@return
+
+    ; If graphics updated, set low-health flag
+    ldr     r4, =SamusUpgrades
+    mov     r1, r8
+    cmp     r1, #1Dh
+    bhi     @@clear_lowhealth_flag
+
+@@set_lowhealth_flag:
+    mov     r1, #01h
+    strb    r1, [r4, SamusUpgrades_LowHealthFlag]
+    b       @@return
+
+@@clear_lowhealth_flag:
+    mov     r1, #00h
+    strb    r1, [r4, SamusUpgrades_LowHealthFlag]
 
 @@return:
     ldr     r0, =ExcessEnergyFlag
