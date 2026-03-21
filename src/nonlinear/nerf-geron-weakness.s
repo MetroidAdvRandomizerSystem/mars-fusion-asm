@@ -81,7 +81,7 @@
     mov r0, ClipdataAction_MakeSolid
 
 
-; Increases the sideways hitbox of each Geron, so that 
+; Increases the sideways hitbox of each Geron, so that
 ; you can shinespark/speedboost through them without bonking against the solid collision
 ; These are all modified in their respective Init functions.
 ; FIXME: Instead of increasing hitboxes, create a new speedboostable clipdata type
@@ -124,12 +124,16 @@
 .endarea
 
 
-; Make Super Missile Geron passable if it hasn't formed yet, but impassable once it has formed.
+.org 08041FA0h      ; in SuperMissileGeronInit
+.area 6, 0
+    bl @SuperGeronInitHijack
+.endarea
 
-; Changes the function in SuperMissileGeronInit, to only set collision if pose is not Spawning_From_X
 .autoregion
 .align 2
 .func @SuperGeronInitHijack
+; Make Super Missile Geron passable if it hasn't formed yet, but impassable once it has formed.
+; Changes the function in SuperMissileGeronInit, to only set collision if pose is not Spawning_From_X
     push    { lr }
     ldr     r1, =CurrentSprite
     add     r1, Sprite_Pose
@@ -142,17 +146,9 @@
     pop     { pc }
 .endfunc
 .pool
-.endautoregion
 
-.org 08041FA0h      ; in SuperMissileGeronInit
-.area 6, 0
-    bl @SuperGeronInitHijack
-.endarea
-
-; Call GeronSetCollision at the end of SuperMissileGeronIdleInit
-.autoregion
-.align 2
 .func @SuperGeronIdleInitHijack
+; Call GeronSetCollision at the end of SuperMissileGeronIdleInit
     push    { lr }
     mov     r0, ClipdataAction_MakeSolid
     bl      GeronSetCollision
