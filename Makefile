@@ -28,7 +28,7 @@ ifeq ($(BUILD_TYPE), debug)
 	SYMBOL_DATA_ARMIPS_OPTION := -sym $(BIN_DIR)/$(OUT)-symbols.sym
 else
     BUILD_SYMBOL = -definelabel DEBUG 0
-    SYMBOL_DATA_ARMIPS_OPTION :=
+    SYMBOL_DATA_ARMIPS_OPTION := -sym $(BIN_DIR)/$(OUT)-base-symbols.sym
 endif
 
 QOL := true
@@ -59,7 +59,7 @@ $(OBJ_DIR)/base.gba: $(BIN_DIR)/$(OUT).gba | $(OBJ_DIR)
 	cp $< $@
 
 $(OBJ_DIR)/%.gba: check | $(OBJ_DIR)
-	$(AS) $(SYMBOL_DATA_ARMIPS_OPTION) $(ALL_SYMBOLS) -definelabel $* 1 src/main.s
+	$(AS) -sym $(BIN_DIR)/$(OUT)-$*-symbols.sym $(ALL_SYMBOLS) -definelabel $* 1 src/main.s
 	mv $(OBJ_DIR)/$(OUT).gba $@
 
 $(BIN_DIR)/%.ips: $(OBJ_DIR)/%.gba $(OBJ_DIR)/base.gba
