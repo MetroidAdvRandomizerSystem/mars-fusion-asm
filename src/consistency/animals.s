@@ -12,3 +12,10 @@
 ;   (0x3Bh) in DachoraWaitingForBaby which prevents movement during the animals
 ;   run-away sequence.
 .endarea
+
+.org 0804D9C2h
+.area 0804D9CCh - 0804D9C2h, 00
+    b   0804D9CCh ; skip to end of area
+; This section removes incrementing Samus' current animation frame while the
+;   Baby Dachora is running to the right.
+.endarea
