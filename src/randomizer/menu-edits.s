@@ -14,7 +14,7 @@
 .align 4
 PauseScreenOamData:
 ; Vanilla OAM Pointers
-.incbin "metroid4.gba", VanillaPauseScreenOamData & 7FFFFFh, 230h
+.incbin BASEROM, VanillaPauseScreenOamData & 7FFFFFh, 230h
 
 .org PauseScreenOamData + (MenuSpriteGfx_SelectMapChange * 4)
     .dw     @SelectMapChangeOamDataPointers

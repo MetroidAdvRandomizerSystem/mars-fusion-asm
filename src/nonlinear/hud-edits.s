@@ -81,11 +81,6 @@
     bl      @DrawEnergyForHud
 .endarea
 
-.if DEBUG
-; increases max-health in debug menu
-.org 0857618Ah
-    .dh 9999
-.endif
 
 .org ForceExcessHealthDisplayPointer
 .area 4

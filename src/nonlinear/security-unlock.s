@@ -114,7 +114,7 @@
 ; The vanilla function works for setup of data, except it iterates at the beginning
 ; of the loop. We offset the function 2 bytes and move the iterator to the end of
 ; the loop instead.
-.incbin "metroid4.gba", 077E96h, 4
+.incbin BASEROM, 077E96h, 4
     lsr     r0, r3
     mov     r6, #1
     and     r6, r0
@@ -124,7 +124,7 @@
 ; The vanilla function works for setup of data, except it iterates at the beginning
 ; of the loop. We offset the function 2 bytes and move the iterator to the end of
 ; the loop instead.
-.incbin "metroid4.gba", 077EA6h, 032h
+.incbin BASEROM, 077EA6h, 032h
 .area 8h
 .org 08077ED6h
     add     r3, r4, #1
@@ -143,7 +143,7 @@
     and     r6, r0
 .endarea
 .org 08077F0Ch
-.incbin "metroid4.gba", 077F0Eh, 18h
+.incbin BASEROM, 077F0Eh, 18h
 .area 8h
     add     r3, r4, #1
     mov     r4, r3

@@ -1,5 +1,8 @@
+BASEROM equ "metroid4.gba"
+OUTPUTROM equ "obj/m4rs.gba"
+
 .gba
-.open "metroid4.gba", "obj/m4rs.gba", 08000000h
+.open BASEROM, OUTPUTROM, 08000000h
 
 .table "data/text.tbl"
 

@@ -50,6 +50,11 @@
     sub     r1, r3
     asr     r1, #1Fh
     orr     r3, r1
+    ldr     r2, =#999
+    cmp     r3, r2      ; if missiles > 999
+    bls     @@setCurrMissiles
+    mov     r3, r2      ; cap missiles at 999
+@@setCurrMissiles:
     strh    r3, [r4, SamusUpgrades_CurrMissiles]
     ldrh    r3, [r4, SamusUpgrades_MaxMissiles]
     add     r3, r0
@@ -59,6 +64,11 @@
     sub     r1, r3
     asr     r1, #1Fh
     orr     r3, r1
+    ldr     r2, =#999
+    cmp     r3, r2      ; if missiles > 999
+    bls     @@setMaxMissiles
+    mov     r3, r2      ; cap missiles at 999
+@@setMaxMissiles:
     strh    r3, [r4, SamusUpgrades_MaxMissiles]
     pop     { r0 - r4 }
     bx      lr
@@ -77,15 +87,25 @@
     sub     r1, r3
     asr     r1, #1Fh
     orr     r3, r1
+    ldr     r2, =#99
+    cmp     r3, r2      ; if pbombs > 99
+    bls     @@setCurrPbomb
+    mov     r3, r2      ; cap pbombs at 99
+@@setCurrPbomb:
     strb    r3, [r4, SamusUpgrades_CurrPowerBombs]
     ldrb    r3, [r4, SamusUpgrades_MaxPowerBombs]
     add     r3, r0
     asr     r2, r3, #1Fh
     bic     r3, r2
-    mov     r1, #255
+    mov     r1, #0FFh
     sub     r1, r3
     asr     r1, #1Fh
     orr     r3, r1
+    ldr     r2, =#99
+    cmp     r3, r2      ; if pbombs > 99
+    bls     @@setMaxPbomb
+    mov     r3, r2      ; cap pbombs at 99
+@@setMaxPbomb:
     strb    r3, [r4, SamusUpgrades_MaxPowerBombs]
     pop     { r0 - r4 }
     bx      lr

@@ -4,6 +4,7 @@
 .definelabel ProcessPauseButtonPress, 08068870h
 .definelabel DebugMenuDrawNumber, 0807E520h
 .definelabel DebugSectionInfo, 0858211Ch
+.definelabel DebugMenuHealthAndAmmoMaxValues, 0857618Ah
 
 .sym off
 .definelabel NonGameplayFlag_PauseScreen, 2
@@ -111,6 +112,8 @@
 ; Drawing health/Ammo/Metroid values
 .org 0807E4A8h
     sub     r0, #DebugSection_Metroid
+.org 0807E4AEh
+    cmp     r0, #2
 .org 0807E4B6h
 .area 0807E4C8h-., 0
     ldr     r4, =@DebugMenuDrawHealthAndAmmoHighjack
@@ -128,6 +131,14 @@
     .pool
 .endarea
 .definelabel @ReturnFromNoClipSpeedHighjack, org()+1
+
+; changes max health and ammo limits in debug menu
+.org DebugMenuHealthAndAmmoMaxValues
+.area 6
+    .dh 9999    ; Energy
+    .dh 999     ; Missile
+    .dh 99      ; pbomb
+.endarea
 
 
 .autoregion
@@ -263,10 +274,10 @@
     mov     r1, #DebugSection_Metroid
     bl      DebugMenuDrawNumber
     ldr     r4, =SamusUpgrades
-    ldrb    r0, [r4, #SamusUpgrades_CurrMissiles]
+    ldrh    r0, [r4, #SamusUpgrades_CurrMissiles]
     mov     r1, #DebugSection_MissileCurrent
     bl      DebugMenuDrawNumber
-    ldrb    r0, [r4, #SamusUpgrades_MaxMissiles]
+    ldrh    r0, [r4, #SamusUpgrades_MaxMissiles]
     mov     r1, #DebugSection_MissileMax
     bl      DebugMenuDrawNumber
     ldr     r0, =@ReturnFromDebugMenuDrawingHighjack

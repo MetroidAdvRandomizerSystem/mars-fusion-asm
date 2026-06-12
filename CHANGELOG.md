@@ -2,6 +2,9 @@
 
 ## Unreleased - 2026-06-??
 - Fixed: Offworld item graphics no longer appear as an Empty Tank
+- Fixed: Maximum ammo is now limited as defined
+  - Missile Ammo: 999 Missiles maximum
+  - Power Bomb Ammo: 99 Power Bombs maximum
 
 ### Room Adjustments
 #### Sector 5

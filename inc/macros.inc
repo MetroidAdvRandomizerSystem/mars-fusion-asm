@@ -58,10 +58,10 @@
 .expfunc signed_reciprocal(d, p), (1 << p) / d + 1
 
 ; read pointer from source file
-.expfunc readptr(pos), readu32("metroid4.gba", pos & 0xFFFFFF)
+.expfunc readptr(pos), readu32(BASEROM, pos & 0xFFFFFF)
 
 ; read byte at the current position from source file
-.expfunc read_byte_at_current_pos(), readbyte("metroid4.gba", org() & 0xFFFFFF)
+.expfunc read_byte_at_current_pos(), readbyte(BASEROM, org() & 0xFFFFFF)
 
 ; create OAM frame for the nav lock sprite based on the security level
 .macro nav_lock_oam_frame, level

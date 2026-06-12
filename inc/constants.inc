@@ -78,7 +78,7 @@ GFX_TILE equ 20h
 
 ; This value is the amount of code copied into IWRAM for converting clipdata
 ; Since this is part of a 16-bit DMA Transfer, the size is halved in ROM
-ConvertClipdataCodeLength equ readu16("metroid4.gba", 068B14h) * 2
+ConvertClipdataCodeLength equ readu16(BASEROM, 068B14h) * 2
 
 ; non-vanilla constants
 
