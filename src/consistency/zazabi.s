@@ -18,7 +18,7 @@
 .endarea
 
 
-@ZazabiMagicNumber equ 0FFh
+@ZazabiDefaultAdjustmentNumber equ 0FFh
 
 .org ZazabiTablePointer
 .area 04h
@@ -28,7 +28,7 @@
 .autoregion
 .align 2
 ZazabiLookupTable:
-.fill 4, @ZazabiMagicNumber   ; 4 distinct phases
+.fill 4, @ZazabiDefaultAdjustmentNumber   ; 4 distinct phases
 
 .func @ZazabiCrawlingHijack
 ; r0 is value of work3 (after doing gSpriteRandomNumber/4), r1 points to work3, r2 is gSubSpriteData1.health, r4 is gCurrentSprite
@@ -36,17 +36,17 @@ ZazabiLookupTable:
 
 ; We do essentially 5 - (gSubSpriteData1.health / 20), and use that as an offset to our table.
 ; The subsprite health goes from 40 to 100, in steps of 20.
-    push    { r1 }
+    mov     r5, r1
     mov     r4, r0
     mov     r0, r2
     mov     r1, #20
-    bl DivideUnsigned
+    bl      DivideUnsigned
     mov     r1, #5
     sub     r0, r1, r0
     ldr     r1, =ZazabiLookupTable
     ldrb    r0, [r1, r0]
-    pop     { r1 }      ; restore r1 to point to work3
-    cmp     r0, #@ZazabiMagicNumber
+    mov     r1, r5      ; restore r1 to point to work3
+    cmp     r0, #@ZazabiDefaultAdjustmentNumber
     bne     @@ApplyOffsets
     mov     r0, r4      ; If offset was magic number, restore the original random number
 
@@ -74,7 +74,7 @@ ZazabiLookupTable:
     mov     r1, r0      ; temp store the random value in r1
     ldr     r0, =ZazabiLookupTable
     ldrb    r0, [r0, #3]
-    cmp     r0, @ZazabiMagicNumber
+    cmp     r0, @ZazabiDefaultAdjustmentNumber
     bne     @@Exit
     mov     r0, r1      ; offset was magic number, so restore it back to random number
 
