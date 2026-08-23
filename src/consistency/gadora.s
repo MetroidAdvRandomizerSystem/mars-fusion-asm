@@ -23,7 +23,7 @@
     bl @GadoraOpeningEyeHijack
 .endarea 
 
-@GadoraMagicNumber equ 0FFh
+@GadoraFallbackNumber equ 0FFh
 
 .org GadoraTablePointer
 .area 04h
@@ -35,7 +35,7 @@
 
 GadoraLookupTable:
 ; GadoraArachnus_Id to GadoraYakuza_Id, not counting the unused ones.
-.fill 10, @GadoraMagicNumber
+.fill 10, @GadoraFallbackNumber
 
 .func @GadoraOpeningEyeHijack
 ; We hijack the opening function to read from a custom table on how many times
@@ -43,7 +43,7 @@ GadoraLookupTable:
 ; the vanilla code instead.
 
 ; at start of hijack: r0 contains gSpriteRandomNumber, r4 contains CurrentSprite
-    push    { r0 }  ; storing this for the original behaviour
+    mov    r2, r0  ; storing the random number for the original behaviour
 
 ; All Gadora sprite ids are next to each other numerically, so 
 ; subtracting by the first gadora id offsets the id to start at 0 for our lookup table
@@ -51,10 +51,9 @@ GadoraLookupTable:
     sub     r0, #GadoraArachnus_Id
     ldr     r1, =GadoraLookupTable
     ldrb    r1, [r1, r0]
-    cmp     r1, #@GadoraMagicNumber
+    cmp     r1, #@GadoraFallbackNumber
     beq      @@OriginalCode
 
-    pop     { r0 }  ; don't need it anymore, can remove it from the stack
     mov     r0, r4
     add     r0, Sprite_Work2
     ldrb    r0, [r0, #0]
@@ -64,7 +63,7 @@ GadoraLookupTable:
     .pool
 
 @@OriginalCode:
-    pop     { r0 }
+    mov     r0, r2
     cmp     r0, #6
     bls     @@OpeningCase
     mov     r0, r4
