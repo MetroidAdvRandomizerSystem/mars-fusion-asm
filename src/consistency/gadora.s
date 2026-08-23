@@ -23,7 +23,7 @@
     bl @GadoraOpeningEyeHijack
 .endarea 
 
-@GadoraFallbackNumber equ 0FFh
+@GadoraFallbackShotNumber equ 0FFh
 
 .org GadoraTablePointer
 .area 04h
@@ -35,7 +35,7 @@
 
 GadoraLookupTable:
 ; GadoraArachnus_Id to GadoraYakuza_Id, not counting the unused ones.
-.fill 10, @GadoraFallbackNumber
+.fill 10, @GadoraFallbackShotNumber
 
 .func @GadoraOpeningEyeHijack
 ; We hijack the opening function to read from a custom table on how many times
@@ -51,7 +51,7 @@ GadoraLookupTable:
     sub     r0, #GadoraArachnus_Id
     ldr     r1, =GadoraLookupTable
     ldrb    r1, [r1, r0]
-    cmp     r1, #@GadoraFallbackNumber
+    cmp     r1, #@GadoraFallbackShotNumber
     beq      @@OriginalCode
 
     mov     r0, r4
