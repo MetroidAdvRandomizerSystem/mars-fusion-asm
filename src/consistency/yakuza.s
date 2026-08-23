@@ -38,7 +38,7 @@ YakuzaRounds:
     ldr     r1, =CurrentSprite
     add     r1, Sprite_Work0
     strb    r0, [r1, #0]
-    bl      0805C520h   ; end of the function where it tries to return
+    bl      0805C520h   ; end of the function where it prepares for returning
 .pool
 .endfunc
 .endautoregion
