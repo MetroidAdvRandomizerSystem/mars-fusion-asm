@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-06-??
 
+- Added: Door symbols to be able to be used via text.
+
 ## 0.12.3 - 2026-06-16
 - Fixed: Offworld item graphics no longer appear as an Empty Tank
 - Fixed: Maximum ammo is now limited as defined
