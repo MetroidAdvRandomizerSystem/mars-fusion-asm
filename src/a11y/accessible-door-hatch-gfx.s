@@ -7,7 +7,7 @@
     .incbin "data/accessible-doors.gfx"
 .endarea
 
-.org TEXT_CHARACTER_GFX + GFX_ROW * 8
+.org TextCharacterGfx + GFX_ROW * 8
 .area GFX_ROW*2
     .incbin "data/door-symbols-font.gfx"
 .endarea
