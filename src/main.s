@@ -73,6 +73,7 @@ reserve_pointer InstantMorphFlagPointer
 reserve_pointer ForceExcessHealthDisplayPointer
 reserve_pointer GadoraTablePointer
 reserve_pointer ZazabiTablePointer
+reserve_pointer YakuzaRoundsPointer
 
 
 ; Mark end-of-file padding as free space
@@ -168,6 +169,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/consistency/animals.s"
 .include "src/consistency/gadora.s"
 .include "src/consistency/zazabi.s"
+.include "src/consistency/yakuza.s"
 
 .if !DEBUG
 .include "src/nonlinear/item-select.s"
