@@ -1,12 +1,12 @@
 # Changelog
 
-## Unreleased - 2026-06-??
+## Unreleased - 2026-08-24
 
 - Changed: The time it takes for the Gadora to open its eye is now always set to be the fastest time.
 - Changed: Added an option to change how many times each Gadora shoots before being vulnerable. If not provided, it will fall back to vanilla behaviour.
 - Changed: Added an option to tweak each Gadora how often it shoots projectiles before being vulnerable. If not provided, it will fall back to vanilla behaviour.
 - Changed: Added an option to adjust how many additional jumps Zazabi does in rounds 1 to 3, and how long it crawls for in round 4. If not provided, it will fall back to vanilla behaviour.
-- Changed: Added an option to adjust how many rounds Yakuza will additionally do before it opens its mouth again.
+- Changed: Added an option to adjust how many rounds Yakuza will additionally do before it opens its mouth again. If not provided, it will fall back to vanilla behaviour.
 
 ## 0.12.3 - 2026-06-16
 - Fixed: Offworld item graphics no longer appear as an Empty Tank
