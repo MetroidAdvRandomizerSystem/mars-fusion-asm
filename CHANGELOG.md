@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - 2026-08-24
+## 0.13.0 - 2026-08-24
 
 - Changed: The time it takes for the Gadora to open its eye is now always set to be the fastest time.
 - Changed: Added an option to change how many times each Gadora shoots before being vulnerable. If not provided, it will fall back to vanilla behaviour.
