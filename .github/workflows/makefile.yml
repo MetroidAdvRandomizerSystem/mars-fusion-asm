@@ -19,7 +19,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
     - name: Copy game file
       run: cp --no-preserve=mode $METROID_FUSION_U_PATH ./metroid4.gba
