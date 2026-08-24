@@ -2,6 +2,9 @@
 
 ## Unreleased - 2026-06-??
 
+- Changed: The time it takes for the Gadora to open its eye is now always set to be the fastest time.
+- Changed: Added an option to change how many times each Gadora shoots before being vulnerable. If not provided, it will fall back to vanilla behaviour.
+
 ## 0.12.3 - 2026-06-16
 - Fixed: Offworld item graphics no longer appear as an Empty Tank
 - Fixed: Maximum ammo is now limited as defined
