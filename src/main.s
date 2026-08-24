@@ -71,6 +71,7 @@ reserve_pointer TitleScreenTextPointersPointer
 reserve_pointer DefaultStereoFlagPointer
 reserve_pointer InstantMorphFlagPointer
 reserve_pointer ForceExcessHealthDisplayPointer
+reserve_pointer GadoraTablePointer
 
 
 ; Mark end-of-file padding as free space
@@ -125,6 +126,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 
 ; Accessibility patches
 ; Patches which make the game more acccessible to people.
+.notice "Applying accessibility patches..."
 .include "src/a11y/accessible-door-hatch-gfx.s"
 .include "src/a11y/accessible-enemy-gfx.s"
 .include "src/a11y/accessible-flashing.s"
@@ -161,7 +163,9 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 ; End non-linearity patches
 
 ; Consistency patches
+.notice "Applying consistency patches..."
 .include "src/consistency/animals.s"
+.include "src/consistency/gadora.s"
 
 .if !DEBUG
 .include "src/nonlinear/item-select.s"
