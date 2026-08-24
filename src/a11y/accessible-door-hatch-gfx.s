@@ -7,7 +7,7 @@
     .incbin "data/accessible-doors.gfx"
 .endarea
 
-.org 08684FACh  ; Base address of text starts at 0x80682FAC, this here is an empty unused row
-.area 800h
+.org TEXT_CHARACTER_GFX + GFX_ROW * 8
+.area GFX_ROW*2
     .incbin "data/door-symbols-font.gfx"
 .endarea

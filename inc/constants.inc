@@ -74,6 +74,7 @@ DMA_ENABLE              equ 1 << 15 + DMA_CNT_H
 VRAM equ 06000000h
 GFX_ROW equ 400h
 GFX_TILE equ 20h
+TEXT_CHARACTER_GFX equ 08682FACh
 
 
 ; This value is the amount of code copied into IWRAM for converting clipdata
