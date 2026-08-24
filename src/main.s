@@ -72,6 +72,7 @@ reserve_pointer DefaultStereoFlagPointer
 reserve_pointer InstantMorphFlagPointer
 reserve_pointer ForceExcessHealthDisplayPointer
 reserve_pointer GadoraTablePointer
+reserve_pointer ZazabiTablePointer
 
 
 ; Mark end-of-file padding as free space
@@ -166,6 +167,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .notice "Applying consistency patches..."
 .include "src/consistency/animals.s"
 .include "src/consistency/gadora.s"
+.include "src/consistency/zazabi.s"
 
 .if !DEBUG
 .include "src/nonlinear/item-select.s"
