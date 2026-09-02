@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.13.1 - 2026-??-??
+
+- Fixed: The jump options for Zazabi were taken as absolutes instead of additions.
+
 ## 0.13.0 - 2026-08-24
 
 - Changed: The time it takes for the Gadora to open its eye is now always set to be the fastest time.
