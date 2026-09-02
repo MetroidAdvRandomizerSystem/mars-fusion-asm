@@ -40,7 +40,9 @@ ZazabiLookupTable:
     mov     r4, r0
     mov     r0, r2
     mov     r1, #20
-    bl      DivideUnsigned
+    push    { r2 }
+    bl      DivideUnsigned ; modifies r2. r3 too, but its not being used.
+    pop     { r2 }
     mov     r1, #5
     sub     r0, r1, r0
     ldr     r1, =ZazabiLookupTable
