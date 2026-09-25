@@ -1,6 +1,8 @@
 # Changelog
 
-## 0.13.1 - 2026-??-??
+## Unreleased - 2026-??-??
+
+## 0.13.1 - 2026-09-25
 
 - Fixed: The jump options for Zazabi were taken as absolutes instead of additions.
 
