@@ -210,7 +210,7 @@
     ldr     r0, =@SecondaryWeaponSelectMode
     ldrb    r0, [r0, #0]
     cmp     r0, 0
-    beq     @exit
+    beq     @@exit
     ; If using TOGGLE, redirect the GrabbedByYakuza to one of the normal missile states
     ; This is done as to prevent frustration over the boss disabling the user's selection.
     ldrb    r0, [r6, SamusState_Pose]
