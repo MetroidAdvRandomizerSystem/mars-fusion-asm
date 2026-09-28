@@ -74,6 +74,7 @@ reserve_pointer ForceExcessHealthDisplayPointer
 reserve_pointer GadoraTablePointer
 reserve_pointer ZazabiTablePointer
 reserve_pointer YakuzaRoundsPointer
+reserve_pointer SecondaryWeaponSelectModePointer
 
 
 ; Mark end-of-file padding as free space
