@@ -201,6 +201,7 @@ SamusPose_WallJumping equ 16h
 SamusPose_ScrewAttacking equ 1Eh
 SamusPose_Shinesparking equ 24h
 SamusPose_Dying equ 3Eh
+SamusPose_GrabbedByYakuza equ 040h
 SamusPose_FrozenRequest equ 0FBh
 
 StandingFlag_Ground equ 00h

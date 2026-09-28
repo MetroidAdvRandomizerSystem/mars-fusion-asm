@@ -17,6 +17,13 @@
 .pool
 .endarea
 
+; In SamusUpdateHighlightedWeaponsAndCharge, hijack the cases that disable missiles and reset diffusion timer
+.org 080060E0h
+.area 4
+    bl      @SamusUpdateHighlightGrabbedByYakuzaHijack
+.endarea
+
+
 @WH_POWER_BOMB equ 10h
 @WH_MISSILES equ 01h
 
@@ -196,4 +203,26 @@
 
 .pool
 .endfunc
+
+.align 2
+.func @SamusUpdateHighlightGrabbedByYakuzaHijack
+    ; Check first whether to use HOLD (vanilla) or TOGGLE
+    ldr     r0, =@SecondaryWeaponSelectMode
+    ldrb    r0, [r0, #0]
+    cmp     r0, 0
+    beq     @exit
+    ; If using TOGGLE, redirect the GrabbedByYakuza to one of the normal missile states
+    ; This is done as to prevent frustration over the boss disabling the user's selection.
+    ldrb    r0, [r6, SamusState_Pose]
+    cmp     r0, SamusPose_GrabbedByYakuza
+    bne     @@exit
+    ldr     r4, =@MissileAddresses
+    bl       @SamusUpdateHighlightHijack
+
+@@exit:
+    bl      @EXIT_ADDRESS
+
+.pool
+.endfunc
+
 .endautoregion
