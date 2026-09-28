@@ -132,6 +132,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .include "src/a11y/accessible-door-hatch-gfx.s"
 .include "src/a11y/accessible-enemy-gfx.s"
 .include "src/a11y/accessible-flashing.s"
+.include "src/a11y/secondary-weapon-toggle.s"
 
 ; Non-linearity patches
 ; Patches which mitigate or remove linear story restrictions
