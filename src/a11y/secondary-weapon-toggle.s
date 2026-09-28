@@ -1,5 +1,7 @@
+; Adds an option so that the R-Button toggles between the secondary weapons, instead of needing to hold R
 
-; weaponhighlight, case for morph states
+
+; In SamusUpdateHighlightedWeaponsAndCharge, hijack the case for the morph states
 .org 080060A0h
 .area 24h
     ldr     r4, =@PowerBombAddresses
@@ -7,6 +9,7 @@
 .pool
 .endarea
 
+; In SamusUpdateHighlightedWeaponsAndCharge, hijack the case for the standing/missile states
 .org 080060E8h
 .area 24h
     ldr     r4, =@MissileAddresses
