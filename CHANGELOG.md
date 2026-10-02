@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased - 2026-??-??
+- Fixed: Go Mode music no longer turns off when disabling Charge or Missiles.
 
 ## 0.13.1 - 2026-09-25
 
