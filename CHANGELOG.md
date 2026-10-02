@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased - 2026-06-??
+- Fixed: Go Mode music no longer turns off when disabling Charge or Missiles.
 
 ## 0.12.3 - 2026-06-16
 - Fixed: Offworld item graphics no longer appear as an Empty Tank

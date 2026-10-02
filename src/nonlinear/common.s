@@ -301,13 +301,13 @@
     bl      CheckEvent
     cmp     r0, #01
     beq     @@return_false
-    ldr     r1, =SamusUpgrades
-    ldrb    r0, [r1, SamusUpgrades_BeamUpgrades]
+    ldr     r1, =PermanentUpgrades
+    ldrb    r0, [r1, PermanentUpgrades_BeamUpgrades]
     lsl     r0, #1Fh
     lsr     r0, #1Fh
     cmp     r0, #1
     bne     @@return_false
-    ldrb    r0, [r1, SamusUpgrades_ExplosiveUpgrades]
+    ldrb    r0, [r1, PermanentUpgrades_ExplosiveUpgrades]
     lsl     r0, #1Fh
     lsr     r0, #1Fh
     cmp     r0, #1
