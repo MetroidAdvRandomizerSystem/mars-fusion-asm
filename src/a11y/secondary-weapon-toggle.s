@@ -31,7 +31,7 @@
 @EXIT_ADDRESS equ 08006116h
 
 .org SecondaryWeaponSelectModePointer
-.area 04h 
+.area 04h
     .dw     @SecondaryWeaponSelectMode
 .endarea
 
@@ -43,15 +43,15 @@
 
 
 @MissileAddresses:
-.db     @WH_MISSILES
-.db     @WH_POWER_BOMB
-.db     (1 << ExplosiveUpgrade_Missiles)
-.db     (SamusUpgrades_CurrMissiles)
+    .db     @WH_MISSILES
+    .db     @WH_POWER_BOMB
+    .db     (1 << ExplosiveUpgrade_Missiles)
+    .db     (SamusUpgrades_CurrMissiles)
 @PowerBombAddresses:
-.db     @WH_POWER_BOMB
-.db     @WH_MISSILES 
-.db     (1 << ExplosiveUpgrade_PowerBombs)
-.db     (SamusUpgrades_CurrPowerBombs)
+    .db     @WH_POWER_BOMB
+    .db     @WH_MISSILES 
+    .db     (1 << ExplosiveUpgrade_PowerBombs)
+    .db     (SamusUpgrades_CurrPowerBombs)
 
 @ADDRESSES_CURRENT_WH equ 0
 @ADDRESSES_ALTERNATIVE_WH equ 1
@@ -77,7 +77,7 @@
     ldrb    r0, [r4, @ADDRESSES_SAMUSUPGRADES_CURR_AMMO]
     ldrb    r0, [r2, r0]
     cmp     r0, #0
-    beq     @@no_usable_secondary 
+    beq     @@no_usable_secondary
 
 @@usable_secondary:
     mov     r0, #1
@@ -94,7 +94,7 @@
 
 
 
-.func @SamusUpdateHighlightHijack    
+.func @SamusUpdateHighlightHijack
     ; r5 contains the temporary weaponhighlight. It starts with WH_NONE.
     ; r6 contains SamusState
     ; r3 needs to point to SamusTimers when jumping out
@@ -164,7 +164,7 @@
 
 @@return:
     ldr     r3, =SamusTimers
-    bl    @EXIT_ADDRESS     
+    bl      @EXIT_ADDRESS
 
 .pool
 .endfunc
@@ -199,7 +199,7 @@
 
 @@return:
     ldr     r3, =SamusTimers
-    bl    @EXIT_ADDRESS  
+    bl      @EXIT_ADDRESS
 
 .pool
 .endfunc
@@ -217,7 +217,7 @@
     cmp     r0, SamusPose_GrabbedByYakuza
     bne     @@exit
     ldr     r4, =@MissileAddresses
-    bl       @SamusUpdateHighlightHijack
+    bl      @SamusUpdateHighlightHijack
 
 @@exit:
     bl      @EXIT_ADDRESS
