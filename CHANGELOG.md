@@ -3,6 +3,8 @@
 ## Unreleased - 2026-??-??
 - Fixed: Go Mode music no longer turns off when disabling Charge or Missiles.
 
+- Added: An option to have the R-Button *toggle* between the secondary weapons and primary weapons instead of needing to hold for secondary weapons.
+
 ## 0.13.1 - 2026-09-25
 
 - Fixed: The jump options for Zazabi were taken as absolutes instead of additions.
