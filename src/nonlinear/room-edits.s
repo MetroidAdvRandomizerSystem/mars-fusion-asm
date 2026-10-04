@@ -96,6 +96,7 @@
 .include "src/nonlinear/room-edits/sector-5/room-05-10.s"
 .include "src/nonlinear/room-edits/sector-5/room-07-0F.s"
 .include "src/nonlinear/room-edits/sector-5/room-08.s"
+.include "src/nonlinear/room-edits/sector-5/room-09.s"
 .include "src/nonlinear/room-edits/sector-5/room-0D-2C.s"
 .include "src/nonlinear/room-edits/sector-5/room-13.s"
 .include "src/nonlinear/room-edits/sector-5/room-15-16.s"
