@@ -56,7 +56,7 @@ jobs:
         run: |
           mkdir ./patches 
           tree ./artifacts
-          unzip "./artifacts/Randomizer Patches.zip/Randomizer Patches.zip"
+          unzip "./artifacts/Randomizer Patches.zip"
           mv ./bin/*.ips ./patches
 
       - name: Check patch sizes
