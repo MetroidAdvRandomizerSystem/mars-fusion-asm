@@ -659,6 +659,8 @@ DMA_CNT equ 08h
 PauseScreenGfxOamPointer equ 08076B10h
 VanillaPauseScreenOamData equ 0879BEC0h
 
+TextCharacterGfx equ 08682FACh
+
 SamusPhysics equ 03001330h
 .sym off
 SamusPhysics_SlowSpeedFlag equ 00h
