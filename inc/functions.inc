@@ -10,6 +10,7 @@ Music_CheckSet equ 08003498h
 Music_CheckPlay equ 080034F4h
 Music_Play equ 08003538h
 Music_FadeOut equ 080036F0h
+MusicWrapper_unk3B78 equ 08003B78h
 DecreaseMusicVolume equ 08003C84h ; Decrease volume when paused
 ResetMusicVolume equ 08003C84h ; Reset volume after pausing
 
@@ -33,6 +34,7 @@ SetSpecialBg1Tile equ 0806C6E4h
 SetClipdata equ 0806C82Ch
 SpawnParticleEffect equ 080730E4h
 SetEvent equ 08074890h
+ClipdataCheckCurrentAffectingAtPosition equ 08068E70h
 
 FinishCollectingTank equ 0806C498h
 SetTankAsCollected equ 0806CCF8h

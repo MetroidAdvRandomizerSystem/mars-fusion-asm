@@ -98,3 +98,5 @@ CustomMessages_Maximum equ 198 ; 58 Messages are reserved by existing behavior, 
 
 NavLockGfxRow equ 4
 NavLockGfxRowCount equ 2
+
+FramesPerSecond equ 60
