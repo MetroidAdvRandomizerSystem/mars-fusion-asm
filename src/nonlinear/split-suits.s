@@ -12,10 +12,10 @@
 
 @VariaReduction equ 0.4
 @VfxInitialCountdownValue equ 10 ; in frames
-@ColdKnockbackFrameTreshold equ (FramesPerSecond * 1.45)
-@SamusHurtGruntThreshold equ ((FramesPerSecond / 2) + (FramesPerSecond * 0.8))
-@LidquidHazardHurtSfxThreshold1 equ ((@SamusHurtGruntThreshold - @SamusHurtGruntThreshold) + 1)
-@LidquidHazardHurtSfxThreshold2 equ ((@SamusHurtGruntThreshold / 2) + 1)
+@ColdKnockbackFrameTreshold equ int(FramesPerSecond * 1.45)
+@SamusHurtGruntThreshold equ int((FramesPerSecond / 2) + (FramesPerSecond * 0.8))
+@LiquidHazardHurtSfxThreshold1 equ int((@SamusHurtGruntThreshold - @SamusHurtGruntThreshold) + 1)
+@LiquidHazardHurtSfxThreshold2 equ int((@SamusHurtGruntThreshold / 2) + 1)
 
 ; Rewrite the entire SamusHazardDamage Function
 ; Function returns a bool in r0, indicating whether Samus should transition into a hurt pose.
@@ -68,7 +68,7 @@
     beq     @@clear_timers
 
 @@reduced_damage:
-    mov     r1, (#FramesPerSecond / @VariaReduction)
+    mov     r1, #int(FramesPerSecond / @VariaReduction)
     b       @@divrem_damage
 @@full_damage:
     mov     r1, #FramesPerSecond
@@ -123,9 +123,9 @@
     cmp     r0, #EnvironmentalHazard_Acid - EnvironmentalHazard_Lava
     bhi     @@check_damage_grunt_sfx
     ; If we are in liquid, play liquid damage sfx if met the two thresholds
-    cmp     r1, #@LidquidHazardHurtSfxThreshold1
+    cmp     r1, #@LiquidHazardHurtSfxThreshold1
     beq     @@play_rapid_damage_sfx
-    cmp     r1, #LidquidHazardHurtSfxThreshold2
+    cmp     r1, #@LiquidHazardHurtSfxThreshold2
     bne     @@check_damage_grunt_sfx
 
 @@play_rapid_damage_sfx:
@@ -134,7 +134,7 @@
     b       @@check_knockback
 
 @@check_damage_grunt_sfx:
-    cmp     r1, #SamusHurtGruntThreshold
+    cmp     r1, #@SamusHurtGruntThreshold
     beq     @@play_damage_grunt_sfx
     b       @@check_knockback
 
@@ -152,7 +152,7 @@
     ldrb    r0, [r5, SamusTimers_ColdKnockback]
     add     r0, #1
     strb    r0, [r5, SamusTimers_ColdKnockback]
-    cmp     r0, #ColdKnockbackFrameTreshold
+    cmp     r0, #@ColdKnockbackFrameTreshold
     blt     @@check_hp
     mov     r0, #0
     strb    r0, [r5, SamusTimers_ColdKnockback]
