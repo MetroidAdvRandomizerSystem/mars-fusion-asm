@@ -2,12 +2,15 @@
 
 ## Unreleased - 2026-??-??
 - Fixed: Go Mode music no longer turns off when disabling Charge or Missiles.
-
 - Added: An option to have the R-Button *toggle* between the secondary weapons and primary weapons instead of needing to hold for secondary weapons.
 
 ### Room Adjustments
+
 #### Main Deck
 - Fixed: Central Reactor Core (MD-31) now has the Kihunters only present after Yakuza was killed instead of them being there by default.
+
+#### Sector 5
+- Changed: Security Shaft West (S5-09) will now always have the strong/red Zeela present.
 
 ## 0.13.1 - 2026-09-25
 

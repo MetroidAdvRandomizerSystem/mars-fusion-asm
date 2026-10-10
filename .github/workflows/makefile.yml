@@ -48,7 +48,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: artifacts/
 
@@ -56,7 +56,7 @@ jobs:
         run: |
           mkdir ./patches 
           tree ./artifacts
-          unzip "./artifacts/Randomizer Patches.zip/Randomizer Patches.zip"
+          unzip "./artifacts/Randomizer Patches.zip"
           mv ./bin/*.ips ./patches
 
       - name: Check patch sizes
@@ -135,7 +135,7 @@ jobs:
 
     steps:
       - name: Download all the artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: artifacts/
 
