@@ -50,3 +50,11 @@
 .area 1
     .db     DoorType_OpenHatch | DoorType_ShowsLocationName
 .endarea
+
+
+; Change the event for the second spriteset layer of vined variant 
+; to happen after  Yakuza was defeated instead of its nav room briefing
+.org MainDeckLevels + 031h * LevelMeta_Size + LevelMeta_Spriteset1Event
+.area 1
+    .db     Event_YakuzaAbsorbed
+.endarea
