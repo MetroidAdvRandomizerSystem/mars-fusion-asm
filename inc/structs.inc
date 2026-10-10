@@ -257,7 +257,7 @@ SamusAnimations_ShinesparkTimer equ 04h
 
 SamusTimers equ 030012F0h
 .sym off
-SamusTimers_SubzeroKnockback equ 05h
+SamusTimers_ColdKnockback equ 05h
 SamusTimers_DiffusionMissileCharge equ 13h
 SamusTimers_EnvironmentalDamage equ 14h
 SamusTimers_EnvironmentalDamageSfx equ 15h
