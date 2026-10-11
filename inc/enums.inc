@@ -210,6 +210,9 @@ StandingFlag_Midair equ 02h
 StandingFlag_NoControl equ 03h
 
 SoundEffect_Morph equ 7Fh
+SoundEffect_SamusHurtGrunt equ 88h
+SoundEffect_LiquidEnvironmentDamageTick equ 8Bh
+SoundEffect_AirEnvironmentDamageTick equ 8Fh
 
 SecurityLevel_Lv0 equ 0 ; Gray doors
 SecurityLevel_Lv1 equ 1 ; Blue doors
@@ -244,8 +247,8 @@ EnvironmentalHazard_Water equ 1
 EnvironmentalHazard_Lava equ 2
 EnvironmentalHazard_Acid equ 3
 EnvironmentalHazard_Heat equ 4
-EnvironmentalHazard_Subzero equ 5
-EnvironmentalHazard_Cold equ 6
+EnvironmentalHazard_Cold equ 5
+EnvironmentalHazard_Subzero equ 6
 
 SpriteStatus_Exists equ 1 << 0
 SpriteStatus_OnScreen equ 1 << 1
