@@ -97,6 +97,7 @@ DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
 .notice "Applying optimization patches..."
 .include "src/optimization/item-check.s"
 .include "src/optimization/power-bomb-explosion.s"
+.include "src/optimization/faster-projectile-hitting-check.s"
 
 ; Quality of life patches
 ; Patches providing non-essential but convenient features
