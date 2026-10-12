@@ -34,7 +34,7 @@ jobs:
       run: zip -9 "${{ matrix.config.zip-name }}.zip" ./bin/*.ips ./bin/*.bps
 
     - name: Upload patches as artifacts
-      uses: actions/upload-artifact@v7.0.1
+      uses: actions/upload-artifact@v7.0.2
       with:
         name: ${{ matrix.config.zip-name }}.zip
         if-no-files-found: error
