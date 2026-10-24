@@ -61,11 +61,11 @@ DefaultStereoFlag:
     ldrb    r1, [r1]
     cmp     r1, #1
     bne     @@return
-    ldr     r1, =NonGameplayRam + NonGameplayRam_FileSelect_OamData \
+    ldr     r0, =NonGameplayRam + NonGameplayRam_FileSelect_OamData \
                 + (FileSelectOam_Len * 15h) ; slot 15h
-    strb    r0, [r1, #FileSelectOam_Stage]
-    add     r1, #FileSelectOam_Len          ; slot 16h
-    strb    r0, [r1, #FileSelectOam_Stage]
+    strb    r1, [r0, #FileSelectOam_Stage]
+    add     r0, #FileSelectOam_Len          ; slot 16h
+    strb    r1, [r0, #FileSelectOam_Stage]
     mov     r0, #02000000h >> 12h
     lsl     r0, #12h
 

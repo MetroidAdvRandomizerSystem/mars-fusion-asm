@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased - 2026-11-??
+- Fixed: Mono audio can now be selected when stereo is set as the default option.
+
 ## 0.14.0 - 2026-10-21
 - Fixed: Go Mode music no longer turns off when disabling Charge or Missiles.
 - Added: An option to have the R-Button *toggle* between the secondary weapons and primary weapons instead of needing to hold for secondary weapons.
