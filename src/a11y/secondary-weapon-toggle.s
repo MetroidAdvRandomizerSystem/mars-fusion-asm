@@ -73,9 +73,19 @@
     and     r0, r1
     cmp     r0, #0
     beq     @@no_usable_secondary
-    ; Check whether we have ammo
+    ; Check whether we have ammo. Missiles is 2 bytes, PBs 1
+    ldrb    r1, [r4, @ADDRESSES_CURRENT_WH]
     ldrb    r0, [r4, @ADDRESSES_SAMUSUPGRADES_CURR_AMMO]
+    cmp     r1, @WH_MISSILES
+    bne     @@load_pbs
+    ; Load Missiles
+    ldrh    r0, [r2, r0]
+    b       @@compare_and_return
+
+@@load_pbs:
     ldrb    r0, [r2, r0]
+
+@@compare_and_return:
     cmp     r0, #0
     beq     @@no_usable_secondary
 
