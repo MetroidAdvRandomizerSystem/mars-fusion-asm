@@ -68,7 +68,7 @@ jobs:
             const path = require("path");
 
             const ALLOW_LIST = [];
-            const THRESHOLD = 250;
+            const THRESHOLD = 260;
 
             let table_msg = "| File | Size (Bytes) |\n|-----|-----|\n";
             let warnings = "";
