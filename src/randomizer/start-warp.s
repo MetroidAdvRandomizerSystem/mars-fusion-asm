@@ -2,7 +2,7 @@
 
 ; Graphics moved to src/randomizer/menu-edits.s
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 4
 .func @ReloadAtStart
     push    { r4-r5, lr }

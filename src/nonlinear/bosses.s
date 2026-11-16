@@ -147,7 +147,7 @@
     .pool
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @SetNocDataDestroyed
     ; unlock doors in NOC data room
@@ -314,7 +314,7 @@
     .pool
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @CheckBoxDebrisPose
     ; Large Debris will always be in slot 0
@@ -341,7 +341,7 @@
     bl      @CheckBoxDebrisPose
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @CheckSaxShouldSpawn
     ldr     r0, =PermanentUpgrades
@@ -368,7 +368,7 @@
     bl      @CheckSaxShouldSpawn
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @StartSaxFight
     push    { lr }
@@ -386,7 +386,7 @@
     bl      @StartSaxFight
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @SetSaxDefeatedFlag
     ldr     r2, =MiscProgress
@@ -444,7 +444,7 @@
     b       080454AEh
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func CheckOmegaMetroidVulnerable
     ldr     r0, =CurrEvent

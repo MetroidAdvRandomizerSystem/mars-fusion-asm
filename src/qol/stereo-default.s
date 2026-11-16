@@ -23,7 +23,7 @@
     bl      @FileSelectSetupOamHighjack
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 DefaultStereoFlag:
     .db     00
 

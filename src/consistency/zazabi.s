@@ -25,7 +25,7 @@
     .dw     ZazabiLookupTable
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 .align 2
 ZazabiLookupTable:
 .fill 4, @ZazabiDefaultAdjustmentNumber   ; 4 distinct phases

@@ -8,7 +8,7 @@
 ; - item locations shared between multiple room variants of the same room. 
 ;   E.g. Bob's Abode has 2 rooms and collecting Bob in either should make it dissapear in the other too.
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 ; Gets the first item index found in the currently loaded room.
 ; The index will be a number from 0 to 99 if found, else it will be -1.
     .align 2
@@ -61,7 +61,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 ; Gets the index of the passed collectible item in the currently loaded room.
 ; The index will be a number from 0 to 99 if found, else it will be -1.
     .align 2
@@ -104,7 +104,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func IsItemCollected
     ldr     r2, =TanksCollected
@@ -408,7 +408,7 @@
     .db     1 << 3
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 4
 .func InitializeSavedata
     push    { r4, lr }

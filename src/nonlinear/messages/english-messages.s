@@ -1,4 +1,4 @@
-.autoregion
+.autoregion DataFreeSpace
     .align 4
 EnglishMessages:
     .dw     @Message_SecurityLevel0
@@ -61,60 +61,60 @@ EnglishMessages:
     .fill   4 * CustomMessages_Maximum ; Reserve space for custom messages
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_SecurityLevel0:
     .stringn 21, "[INDENT]Security level 0 unlocked.\n"
     .string  22, "[INDENT]Gray hatches now active."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_IceTrap:
     .string 56, "[INDENT]You are a FOOL!\n"
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_Nothing:
     .string 50, "[INDENT]Nothing acquired.\n"
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_InfantMetroidsPlaceholder:
     .string "Metroid Placeholder Message."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_InfantMetroidsRemain:
     .stringn 24, "[INDENT]Found an Infant Metroid.\n"
     .string  62, "[INDENT][METROIDS] more remain."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_InfantMetroidsNeeded:
     .stringn 24, "[INDENT]Found an Infant Metroid.\n"
     .string  61, "[INDENT][METROIDS] more needed."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_SecondLastInfantMetroid:
     .stringn 24, "[INDENT]Found an Infant Metroid.\n"
     .string  59, "[INDENT]1 more remains."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_SufficientInfantMetroids:
     .stringn 4,  "[INDENT]Enough Infant Metroids found.\n"
     .string  14, "[INDENT]Return to Operations Deck."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_LastInfantMetroid:
     .stringn 3,  "[INDENT]Found the last Infant Metroid.\n"
@@ -124,21 +124,21 @@ EnglishMessages:
 .defineregion 086B5A18h, 60h
 .defineregion 086B5A78h, 72h
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_WarpToStartLine1:
     .stringn 58, "[INDENT]Warp to start?\n"
     .string  7, "[INDENT]You will return to your start"
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_WarpToStartLine2:
     .stringn 20, "[INDENT]location, but your recent\n"
     .string  15, "[INDENT]progress will not be saved."
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
     .align 2
 @Message_EscapeSequenceStart:
     .stringn 19, "[INDENT]Orbit change implemented.\n"

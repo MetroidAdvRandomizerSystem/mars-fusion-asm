@@ -39,7 +39,7 @@
     bl      @StoreHatchTypes
 
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 .align 4
 .func @StoreHatchTypes
     push    { r1 - r3 }
@@ -71,7 +71,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 .align 4
 .func @ResetEventHatches
     push    { r0 - r3 }

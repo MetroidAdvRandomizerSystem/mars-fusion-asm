@@ -1,7 +1,7 @@
 
 ; Hijack ProjectileContactDamageHitSprite to properly handle speedbooster vs screw attack weakness
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 .align 2
 .func @ScrewSpeedWeaknessHijack
     ; r0 contains the sprite weaknesses of the sprite

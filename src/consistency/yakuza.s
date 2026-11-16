@@ -16,7 +16,7 @@
     .dw     YakuzaRounds
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 .align 2
 YakuzaRounds:
 .db @YakuzaMagicNumber

@@ -20,7 +20,7 @@
     cmp     r0, #1
     bgt     0807A6E6h
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func CheckNavRoomLocked
     ldr     r1, =HintSecurityLevels
@@ -43,7 +43,7 @@
     .dw     HintSecurityLevels
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 HintSecurityLevels:
     .fill 12, 0
 .endautoregion
@@ -144,7 +144,7 @@ HintSecurityLevels:
 
 ; Navigation hint graphics
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 
 .align 2
 SpawnNavLockSprite:

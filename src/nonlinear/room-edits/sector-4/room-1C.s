@@ -1,6 +1,6 @@
 ; Sector 4 - Waterway
 ; add flooded room state
-.autoregion
+.autoregion DataFreeSpace
 @S4_Waterway_Spriteset0:
     .db     03h, 09h, 17h
     .db     03h, 0Bh, 17h

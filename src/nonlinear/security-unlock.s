@@ -201,7 +201,7 @@
 .endarea
 @@cont:
 
-.autoregion
+.autoregion DataFreeSpace
     .aligna 2
 @MapScreenLockLevels:
 ; Lock levels indicated by:

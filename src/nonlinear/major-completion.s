@@ -2,7 +2,7 @@
 ; Extends the vanilla behavior of counting all 100 minor items by adding
 ; major items and security level unlocks to the calculation.
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func PopCount
     ; divide and conquer population count

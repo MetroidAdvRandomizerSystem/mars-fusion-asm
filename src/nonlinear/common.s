@@ -1,6 +1,6 @@
 ; Common functions for use in other non-linearity patches.
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func ObtainMajorLocation
     ldr     r3, =MiscProgress
@@ -365,7 +365,7 @@
     bl  @InGameSubroutineHighjack
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 .align 2
 .func @InGameSubroutineHighjack
     push    { lr }
@@ -387,7 +387,7 @@
     .pool
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 TotalMetroidCount:
     .db     5
 RequiredMetroidCount:
@@ -405,7 +405,7 @@ RequiredMetroidCount:
     .dw     MajorLocationItems
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
     .align 4
 MajorLocationItems:
     .db     Upgrade_Missiles, Message_Auto, MajorItemJingle, 0h
@@ -437,7 +437,7 @@ MajorLocationItems:
 .org TankIncrementsPointer
     .dw     TankIncrements
 
-.autoregion
+.autoregion DataFreeSpace
 .align 4
 TankIncrements:
     .dh     5   ; missile tank
@@ -471,7 +471,7 @@ TankIncrements:
     .skip 5
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 MajorUpgradeInfo:
     .db     00h
     .db     00h

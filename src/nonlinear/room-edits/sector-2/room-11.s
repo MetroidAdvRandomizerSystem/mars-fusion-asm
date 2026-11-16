@@ -2,7 +2,7 @@
 ; add cocoon and kihunter spritesets to intact room state
 ; Slightly adjust exit-distance from door with gadora to prevent instant damage if the gadora is not defeated.
 
-.autoregion
+.autoregion DataFreeSpace
 @S2_ZazabiAccess_Spriteset1:
     .db     03h, 27h, 12h
     .db     05h, 2Dh, 12h
@@ -16,7 +16,7 @@
     .db     0FFh, 0FFh, 0FFh
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
 @S2_ZazabiAccess_Spriteset2:
     .db     03h, 28h, 12h
     .db     04h, 2Ah, 23h
@@ -48,14 +48,14 @@
     .db     69h
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 @S2_ZazabiAccess_CocoonSpriteset:
     .db     91h, 00h
     .db     89h, 02h
     .db     0, 0
 .endautoregion
 
-.autoregion
+.autoregion DataFreeSpace
 @S2_ZazabiAccess_KihunterSpriteset:
     .db     91h, 00h
     .db     8Ah, 02h

@@ -4,7 +4,7 @@
     ; Prevent new game init from wiping door id
     nop
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func SetSamusExitPos
     ldr     r0, =03000BE3h
@@ -112,7 +112,7 @@
     .pool
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @CheckLoadSaveOrNewGame
     push    { r1 }
@@ -171,7 +171,7 @@
     ; force recalculate bg position when loading save
 .endarea
 
-.autoregion
+.autoregion DataFreeSpace
 .align 4
 StartingLocation:
     .db     Area_MainDeck
@@ -195,7 +195,7 @@ StartingLocation:
     bl     @SetTitleStartingArea
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 4
 .func @SetTitleStartingArea
     push    { r0-r3 }
@@ -251,7 +251,7 @@ StartingLocation:
     .pool
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
     .align 2
 .func @ReloadFromGameOver
     push    { lr }

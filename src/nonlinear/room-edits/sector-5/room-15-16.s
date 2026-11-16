@@ -9,7 +9,7 @@
 .incbin "data/rooms/S5-16-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.autoregion DataFreeSpace
 @S5_SecurityShaftEast_Clipdata:
 .incbin "data/rooms/S5-16-Clip.rlebg"
 .endautoregion

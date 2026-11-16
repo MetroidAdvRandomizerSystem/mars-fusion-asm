@@ -5,12 +5,12 @@
 .defineregion readptr(Sector5Levels + 03h * LevelMeta_Size + LevelMeta_Bg1), 486h
 .defineregion readptr(Sector5Levels + 03h * LevelMeta_Size + LevelMeta_Clipdata), 212h
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.autoregion DataFreeSpace
 @S5_NightmareTrainingGrounds_Bg1:
 .incbin "data/rooms/S5-03-BG1.rlebg"
 .endautoregion
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.autoregion DataFreeSpace
 @S5_NightmareTrainingGrounds_Clipdata:
 .incbin "data/rooms/S5-03-Clip.rlebg"
 .endautoregion

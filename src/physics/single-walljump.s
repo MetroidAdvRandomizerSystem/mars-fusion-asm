@@ -2,7 +2,7 @@
 .org 080061D0h
     bl     @SetScrewWJFlag
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 .align 2
 .func @SetScrewWJFlag
     push    { r0-r3 }
@@ -41,7 +41,7 @@
     bl      @UseIncreasedVelocityDuringScrewWJ
 .endarea
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
 .align 2
 .func @PreventDirectionChangeDuringScrewWJ
     push    { r2 }
@@ -119,7 +119,8 @@
 .org 0800657Ch
     bl      @ClearScrewWJFlagIfNecessary
 
-.autoregion
+.autoregion 08000000h, DataFreeSpace
+.align 2
 .func @ClearScrewWJFlagIfNecessary
     push    { r0, r2 }
     ; If pose isn't screw attack, turn flag off
