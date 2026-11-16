@@ -5,5 +5,5 @@
 .area 3
     .db 06h, 25h, 27h
 .endarea
-    
+
 

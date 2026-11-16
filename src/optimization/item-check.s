@@ -5,7 +5,7 @@
 ; both external WRAM and SRAM.
 
 ; WIP/TODO: rewrite binary search tree for the following features:
-; - item locations shared between multiple room variants of the same room. 
+; - item locations shared between multiple room variants of the same room.
 ;   E.g. Bob's Abode has 2 rooms and collecting Bob in either should make it dissapear in the other too.
 
 .autoregion

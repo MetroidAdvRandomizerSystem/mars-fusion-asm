@@ -1,6 +1,6 @@
 ; Sector 4 - Security Bypass
 ; Prevent several softlocks without bombs:
-; Change level geometry on first two dead ends so that you can screw back out if you 
+; Change level geometry on first two dead ends so that you can screw back out if you
 ; went in with screw+morph
 ; And change bomb block of last dead end to never respawn
 

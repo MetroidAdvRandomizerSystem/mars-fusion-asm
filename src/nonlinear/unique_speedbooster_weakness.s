@@ -12,7 +12,7 @@
     ; (r0 & weakness_screw != 0) and (samus.pose == screw)
     ; or (r0 & weakness_speed != 0) and (samus.pose == speed or samus.speedcounter != 0)
 
-    ; Check speed. 
+    ; Check speed.
     push    { lr }
     mov     r1, (1 << SpriteWeakness_Speedbooster)
     and     r1, r0
@@ -30,11 +30,11 @@
 @@check_screw:
     mov     r1, (1 << SpriteWeakness_ScrewAttack)
     and     r1, r0
-    cmp     r1, #0              
-    beq     @@condition_fail    ; If the speed check failed, check that the sprite is weak to Screw... 
+    cmp     r1, #0
+    beq     @@condition_fail    ; If the speed check failed, check that the sprite is weak to Screw...
     ldr     r1, =SamusState
     ldrb    r2, [r1, SamusState_Pose]
-    cmp     r2, #SamusPose_ScrewAttacking   
+    cmp     r2, #SamusPose_ScrewAttacking
     bne     @@condition_fail    ; ...and that we're currently screw attacking.
 
 @@condition_true:
