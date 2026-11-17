@@ -7,7 +7,7 @@
 .definelabel @HorizontalVanillaPillarExtendedOamPointer, 0837AB54h
 .definelabel @HorizontalVanillaPillarExtendingOamPointer, 0837A9BCh
 
-.autoregion DataFreeSpace
+.dataautoregion
     .aligna 4
 @VerticalRevealedPillarOamPointer:
     .dw     @VerticalRevealedPillarFrame1OamData
@@ -126,7 +126,7 @@
 ; Note: OBJ Priority for sprites is forced through the sprite rendering function
 ; and has no effect on the OAM pieces defined. Thus it is not necessary to include
 ; them here.
-.autoregion DataFreeSpace
+.dataautoregion
   .aligna 4
 @VerticalRevealedPillarFrame1OamData:
     .dh     004h
@@ -493,7 +493,7 @@
     bl      @HorizontalExtendedPillarGfx
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 @HorizontalExtendedPillarGfx:
     push    { r1, lr }

@@ -141,7 +141,7 @@
 .endarea
 
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 .func EnableDebug
     push    { r0-r1, lr }

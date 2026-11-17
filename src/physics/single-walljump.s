@@ -2,7 +2,7 @@
 .org 080061D0h
     bl     @SetScrewWJFlag
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 .align 2
 .func @SetScrewWJFlag
     push    { r0-r3 }
@@ -41,7 +41,7 @@
     bl      @UseIncreasedVelocityDuringScrewWJ
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 .align 2
 .func @PreventDirectionChangeDuringScrewWJ
     push    { r2 }
@@ -119,7 +119,7 @@
 .org 0800657Ch
     bl      @ClearScrewWJFlagIfNecessary
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 .align 2
 .func @ClearScrewWJFlagIfNecessary
     push    { r0, r2 }

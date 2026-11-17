@@ -6,17 +6,17 @@
 .incbin "data/rooms/S0-31-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
 @S0_WreckedCentralReactorCore_Clipdata:
 .incbin "data/rooms/S0-31-Clip.rlebg"
 .endautoregion
 
-.autoregion DataFreeSpace
+.dataautoregion
 @S0_CentralReactorCore_BG1:
 .incbin "data/rooms/S0-3B-BG1.rlebg"
 .endautoregion
 
-.autoregion DataFreeSpace
+.dataautoregion
 @S0_CentralReactorCore_Clipdata:
 .incbin "data/rooms/S0-3B-Clip.rlebg"
 .endautoregion

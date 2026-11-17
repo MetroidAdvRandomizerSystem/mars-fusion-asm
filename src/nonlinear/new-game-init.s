@@ -106,7 +106,7 @@
     .pool
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 .func @InitSaveMeta
     ldr     r1, =StartingItems
@@ -146,7 +146,7 @@
     bl      @FileSelectDrawInfoHighjack
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 .align 2
 ; loads StartingItems to set default energy value on new file
 .func @FileSelectDrawInfoHighjack

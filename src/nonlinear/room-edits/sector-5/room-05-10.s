@@ -10,7 +10,7 @@
 .incbin "data/rooms/S5-10-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
 @S5_DataRoom_Clipdata:
 .incbin "data/rooms/S5-10-Clip.rlebg"
 .endautoregion

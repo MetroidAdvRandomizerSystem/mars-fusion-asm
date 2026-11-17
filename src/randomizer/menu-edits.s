@@ -10,7 +10,7 @@
     2. Set the pointer for your new gfx to the index of this table such that it overwrites
        the null pointer generated below. Failure to do this may result in a crash.
 */
-.autoregion DataFreeSpace
+.dataautoregion
 .align 4
 PauseScreenOamData:
 ; Vanilla OAM Pointers
@@ -65,7 +65,7 @@ PauseScreenOamData:
 ; Add vanilla pause OAM Data to free space
 .defineregion 0856F71Ch, 352Dh, 0
 
-.autoregion DataFreeSpace
+.dataautoregion
 .align 4
 @PauseScreenObjGfx:
 .if !DEBUG
@@ -96,7 +96,7 @@ PauseScreenOamData:
 
 ;; OAM DATA
 ; Select to Change Map
-.autoregion DataFreeSpace
+.dataautoregion
     .aligna 2
 @SelectMapChangeOamData:
     .dh     4
@@ -119,7 +119,7 @@ PauseScreenOamData:
 .endautoregion
 
 ; Level 0 Security Locked/Unlocked
-.autoregion DataFreeSpace
+.dataautoregion
 @Lv0LockedOamData:
     .dh 3
     ; L0 Sprite
@@ -158,7 +158,7 @@ PauseScreenOamData:
 ; .dw Pointer, Timer (in frames, specify 0FFh for no animation)
 ; repeat above for each frame
 ; .dd 0 ; mark end with null DWORD
-.autoregion DataFreeSpace
+.dataautoregion
     .aligna 4
 @SelectMapChangeOamDataPointers:
     .dw     @SelectMapChangeOamData
@@ -262,7 +262,7 @@ PauseScreenOamData:
     .pool
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 ; Draws E-tanks and stops if drawing more than 20
 @FileDrawInfoEnergyTankGfxHighjack_CurrentEnergy:
@@ -367,7 +367,7 @@ PauseScreenOamData:
     .pool
 .endautoregion
 
-.autoregion DataFreeSpace
+.dataautoregion
     .align 4
 @FileSelectExcessEnergyIndicator:
     .incbin "data/file-select-excessenergy-indicator.gfx"

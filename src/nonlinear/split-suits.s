@@ -195,7 +195,7 @@
     .dw     EnvironmentalHazardDps
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
 EnvironmentalHazardDps:
 ; These units are all damage per second
     .db     20  ; lava

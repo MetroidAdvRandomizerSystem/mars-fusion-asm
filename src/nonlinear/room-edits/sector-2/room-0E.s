@@ -1,12 +1,12 @@
 ; Sector 2 - Cathedral Cooridor
 ; add connection to Shadow Moses Island under hidden bomb blocks
 ; add cocoon and kihunter spritesets to intact room state
-.autoregion DataFreeSpace
+.dataautoregion
 @S2_Dessgeega_Dormitory_Bg1:
 .incbin "data/rooms/S2-0E-BG1.rlebg"
 .endautoregion
 
-.autoregion DataFreeSpace
+.dataautoregion
 @S2_Dessgeega_Dormitory_Clipdata:
 .incbin "data/rooms/S2-0E-Clip.rlebg"
 .endautoregion

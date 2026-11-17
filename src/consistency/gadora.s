@@ -30,7 +30,7 @@
     .dw     GadoraLookupTable
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
 .align 2
 
 GadoraLookupTable:

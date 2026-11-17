@@ -1,7 +1,7 @@
 ; Sector 6 - Warehouse
 
 ; Move Doors back by one tile to prevent weird behaviour in Entrance Rando.
-.autoregion DataFreeSpace
+.dataautoregion
 @S6_0A_Clipdata:
 .incbin "data/rooms/S6-0A-Clip.rlebg"
 .endautoregion

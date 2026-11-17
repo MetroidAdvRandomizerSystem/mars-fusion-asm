@@ -21,7 +21,7 @@
     cmp     r3, #00                     ; if != 0, skip drawing
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 @InitAndLoadGenericsHighjack:
     push    { lr }
@@ -87,7 +87,7 @@
     .dw     ForceExcessHealthDisplay
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
 ForceExcessHealthDisplay:
     .db     00
 /*

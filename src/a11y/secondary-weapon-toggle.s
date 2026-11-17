@@ -35,7 +35,7 @@
     .dw     @SecondaryWeaponSelectMode
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 
 .align 2
 @SecondaryWeaponSelectMode:

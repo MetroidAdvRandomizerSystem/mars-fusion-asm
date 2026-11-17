@@ -7,7 +7,7 @@
 .incbin "data/rooms/S3-17-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
 @S3_BoxArena_Clipdata:
 .incbin "data/rooms/S3-17-Clip.rlebg"
 .endautoregion

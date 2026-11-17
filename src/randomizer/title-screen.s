@@ -10,7 +10,7 @@
 ;.org 0879C2C8h ; Title Screen Debug Text Pointer (vanilla)
 ;    .dw 08590C98h
 
-.autoregion DataFreeSpace
+.dataautoregion
     .align 4
 TitleScreenTextPointers:
     .dw     TitleScreenText00, TitleScreenText01
@@ -99,7 +99,7 @@ TitleScreenTextPointers:
 .org 0808760Ch
     .dw DMA_ENABLE | DMA_TYPE_32BIT | 300h ; Size of GFX to load
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 .align 2
 @TitleScreenInitHighjack:
     ; repurposes some VRAM to use BG2 instead of BG3 for writing text
@@ -127,7 +127,7 @@ TitleScreenTextPointers:
     .pool
 .endautoregion
 
-.autoregion DataFreeSpace
+.dataautoregion
     .align 4
 @TitleScreenDebugFont:
 .incbin "data/titlescreendebugfont.gfx"

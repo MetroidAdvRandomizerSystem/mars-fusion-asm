@@ -2,7 +2,7 @@
 
 
 ; Move Doors back by one tile to prevent weird behaviour in Entrance Rando.
-.autoregion DataFreeSpace
+.dataautoregion
 @S6_03_Clipdata:
 .incbin "data/rooms/S6-03-Clip.rlebg"
 .endautoregion

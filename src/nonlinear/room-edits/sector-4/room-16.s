@@ -1,7 +1,7 @@
 ; Sector 4 - Pump Control Save Room
 
 ; Move Doors back by one tile to prevent weird behaviour in Entrance Rando.
-.autoregion DataFreeSpace
+.dataautoregion
 @S4_16_Clipdata:
 .incbin "data/rooms/S4-16-Clip.rlebg"
 .endautoregion

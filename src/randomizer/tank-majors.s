@@ -6,7 +6,7 @@
 ; Placing an item in any of these rooms would cause the message box to
 ; overwrite existing sprite slots
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 .func LoadTankGfx
     push    { r4, lr }
@@ -78,7 +78,7 @@
 .org 0806AEC4h
     bl      RevealTank
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 .func RevealTank
     push    { r4-r5, lr }
@@ -223,7 +223,7 @@
     pop     { pc }
     .pool
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
     .align 2
 @MessageBoxClosingHijack:
     push    { lr }
@@ -277,13 +277,13 @@
     pop     { r4-r6, pc }
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
     .align 4
 @TankTiles:
 .incbin "data/major-tanks.gfx"
 .endautoregion
 
-.autoregion DataFreeSpace
+.dataautoregion
 @TankPalettes:
     .db     0   ; empty
     .db     1   ; security level 0

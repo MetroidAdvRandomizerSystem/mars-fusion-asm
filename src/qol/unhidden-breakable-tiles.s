@@ -16,7 +16,7 @@
     bl      @BreakStateIfRevealed
 .endarea
 
-.autoregion 08000000h, DataFreeSpace
+.codeautoregion
 RevealHiddenTilesFlag:
     .db     00h
     .align 2

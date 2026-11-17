@@ -13,7 +13,7 @@
     .dw     @S0_OperationsDeck_Clipdata
 .endarea
 
-.autoregion DataFreeSpace
+.dataautoregion
     .align 4
 @S0_OperationsDeck_Clipdata:
     .incbin "data/rooms/S0-0D-Clip.rlebg"
