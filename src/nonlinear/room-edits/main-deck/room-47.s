@@ -1,5 +1,5 @@
 ; Quarantine Bay
-; Changes: 
+; Changes:
 ; - Always spawn Hornoad.
 ; - Change Hornoad Palette to unused green/yellow palette
 ; - Hornoad always drops Red X

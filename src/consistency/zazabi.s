@@ -1,12 +1,12 @@
 ; Removes relevant RNG of Zazabi:
-; Each phase can have its own number assigned by the patcher on how much to offset the base result by. 
+; Each phase can have its own number assigned by the patcher on how much to offset the base result by.
 ; For phase 1 to 3, this number denotes how many additional jumps Zazabi does where it cannot be hit.
 ; Thus the calculation on how many extra jumps to do ends up as: (CurrentPhase-1) + ProvidedNumber
 ; For phase 4, the number denotes how many additional frames to crawl more. The final calculation ends up as: 60 + ProvidedNumber
 
 
 ; In ZazabiCrawling, Hijack where it tries to adjust work3 for amount of jumps in first 3 phases
-.org 08045A6Ah 
+.org 08045A6Ah
 .area 8
     bl @ZazabiCrawlingHijack
 .endarea
@@ -65,7 +65,7 @@ ZazabiLookupTable:
     add     r0, #1
 
 @@Exit:
-    bl      08045A7Eh    ; return back to original function which stores r0 back into work3 (r1). 
+    bl      08045A7Eh    ; return back to original function which stores r0 back into work3 (r1).
 
 .pool
 .endfunc

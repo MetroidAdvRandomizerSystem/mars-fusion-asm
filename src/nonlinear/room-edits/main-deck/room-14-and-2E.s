@@ -57,7 +57,7 @@
     cmp     r0, #1
     beq     @@RidleyAlreadyCrumbled
     bl      08056E4Ah ; Prep for Ridley to crumble
-@@RidleyAlreadyCrumbled:    
+@@RidleyAlreadyCrumbled:
     bl      08056E78h ; Ridley has crumbled already, go to that branch of logic
     .pool
 .endfunc

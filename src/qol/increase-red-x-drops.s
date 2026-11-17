@@ -40,7 +40,7 @@
     .dh 032Ch
     .dh 00C8h
     .dh 000Ch
-    
+
 .org SpriteStats + Zeela_Id * SpriteStats_Size + SpriteStats_YellowXWeight
     ; originally 337/C8/1
     .dh 032Ch
@@ -52,7 +52,7 @@
     .dh 0200h
     .dh 01F4h
     .dh 000Ch
-    
+
 .org SpriteStats + Geemer_Id * SpriteStats_Size + SpriteStats_YellowXWeight
     ; originally 3F4/A/2
     .dh 03EAh
@@ -107,7 +107,7 @@
     .dh 035Eh
     .dh 0096h
     .dh 000Ch
-    
+
 .org SpriteStats + Namihe_Id * SpriteStats_Size + SpriteStats_YellowXWeight
     ; originally 2D1/12C/3
     .dh 02C8h
@@ -150,7 +150,7 @@
     .dh 0200h
     .dh 01F4h
     .dh 000Ch;
-    
+
 .org SpriteStats + Bull_Id * SpriteStats_Size + SpriteStats_YellowXWeight
     ; originally 337/C8/1
     .dh 032Ch
@@ -191,7 +191,7 @@
     ; originally 2CA/12C/A
     .dh 02C8h
     .dh 012Ch
-    .dh 000Ch    
+    .dh 000Ch
 
 .org SpriteStats + Puyo_Id * SpriteStats_Size + SpriteStats_YellowXWeight
     ; originally 39B/64/1
@@ -270,10 +270,10 @@
     bne    @@return_to_default_logic
     ldr    r0, =RedX_OAMData
     ldr    r1, =CurrentSprite
-    str    r0, [r1, Sprite_OamPointer] 
+    str    r0, [r1, Sprite_OamPointer]
     add    r1, Sprite_SamusCollision
-    mov    r0, #11h ;11h spawns Red-X from enemy when put in SamusCollision                                
-    strb   r0, [r1]                                 
+    mov    r0, #11h ;11h spawns Red-X from enemy when put in SamusCollision
+    strb   r0, [r1]
     pop    { r0-r3 }
     bl     08061930h ; Return to the original function end
 @@return_to_default_logic:

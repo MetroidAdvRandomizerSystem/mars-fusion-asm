@@ -1,6 +1,6 @@
 ; Removes the RNG of the Gadoras:
 ; - The Gadora will not wait randomly before registering Samus in front of it
-; - Each Gadora can have its own number assigned by the patcher on how many times it will 
+; - Each Gadora can have its own number assigned by the patcher on how many times it will
 ;   shoot before it will open its vulnerable eye. If its not replaced, it will fall back to
 ;   its original behaviour
 
@@ -10,18 +10,18 @@
     mov r0, #61
 .endarea
 
-; Same for GadoraIdle. 
+; Same for GadoraIdle.
 .org 08043082h
 .area 2
     mov r0, #61
 .endarea
 
 
-; In GadoraOpeningEye, hijack condition for opening eye 
+; In GadoraOpeningEye, hijack condition for opening eye
 .org 080430D4h
 .area 0xC, 0
     bl @GadoraOpeningEyeHijack
-.endarea 
+.endarea
 
 @GadoraFallbackShotNumber equ 0FFh
 
@@ -39,13 +39,13 @@ GadoraLookupTable:
 
 .func @GadoraOpeningEyeHijack
 ; We hijack the opening function to read from a custom table on how many times
-; a specific Gadora should shoot. If that number is our magic number, we execute 
+; a specific Gadora should shoot. If that number is our magic number, we execute
 ; the vanilla code instead.
 
 ; at start of hijack: r0 contains gSpriteRandomNumber, r4 contains CurrentSprite
     mov    r2, r0  ; storing the random number for the original behaviour
 
-; All Gadora sprite ids are next to each other numerically, so 
+; All Gadora sprite ids are next to each other numerically, so
 ; subtracting by the first gadora id offsets the id to start at 0 for our lookup table
     ldrb    r0, [r4, Sprite_Id]
     sub     r0, #GadoraArachnus_Id

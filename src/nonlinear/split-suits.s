@@ -3,7 +3,7 @@
 ; Currently varia negates heat and cold damage, reduces lava and acid damage
 ; to 40%, and negates lava damage when gravity suit is also acquired.
 ; Gravity by itself does not negate damage.
-; Also splits up sprite damage so that the reductions are based off of how many suits you 
+; Also splits up sprite damage so that the reductions are based off of how many suits you
 ; have instead of prioritizing gravity over varia.
 
 ; NOTE: Damage tick sfx can occur extremely often at higher values of heat,
@@ -14,7 +14,7 @@
 @VfxInitialCountdownValue equ 10 ; in frames
 @ColdKnockbackFrameTreshold equ int(FramesPerSecond * 1.45)
 @SamusHurtGruntThreshold equ int((FramesPerSecond / 2) + (FramesPerSecond * 0.8))
-; These two should play at the start and midway to SamusHurtGrunt 
+; These two should play at the start and midway to SamusHurtGrunt
 @LiquidHazardHurtSfxThreshold1 equ 1
 @LiquidHazardHurtSfxThreshold2 equ int((@SamusHurtGruntThreshold / 2) + 1)
 
@@ -30,7 +30,7 @@
     cmp     r0, #SamusPose_Dying
     beq     @@return_false
 
-    ; Get Clipdata at Samus position 
+    ; Get Clipdata at Samus position
     ldrh    r0, [r1, SamusState_PositionY]
     ldrh    r1, [r1, SamusState_PositionX]
     bl      ClipdataCheckCurrentAffectingAtPosition
@@ -207,7 +207,7 @@ EnvironmentalHazardDps:
 
 ; Repoint VFX check to actually look at the VFX RAM value
 ; Hijacks in SamusUpdateGraphics
-; This line https://github.com/metroidret/mf/blob/025c335836d81af71258a2c928c764c865374bf5/src/samus.c#L7158 
+; This line https://github.com/metroidret/mf/blob/025c335836d81af71258a2c928c764c865374bf5/src/samus.c#L7158
 ; to check for Environmental Damage Vfx instead of SamusTimers_EnvironmentalDamage
 .org 0800BDB6h
 .area 2
@@ -237,7 +237,7 @@ EnvironmentalHazardDps:
     add     r0, r1
     b       @@continuation
 .endarea
-; The reason the areas are split like that, is because in the vanilla code 
+; The reason the areas are split like that, is because in the vanilla code
 ; there is "pre-if stuff, two branches, pool, code for condition1, pool, code for condition2, pool"
 ; Since there is code before our hijack that relies on the pool, we let the existing stuff intact
 .area 04h
