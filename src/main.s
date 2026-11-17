@@ -86,9 +86,11 @@ CodeFreeSpaceLen equ 20318h
 DataFreeSpace equ CodeFreeSpace + CodeFreeSpaceLen
 .defineregion CodeFreeSpace, CodeFreeSpaceLen, 0FFh
 
+.sym off
 ; armips custom directives
 .codeautoregion equ .autoregion 08000000h, DataFreeSpace
 .dataautoregion equ .autoregion DataFreeSpace
+.sym on
 
 ; Debug mode patch
 .if DEBUG
