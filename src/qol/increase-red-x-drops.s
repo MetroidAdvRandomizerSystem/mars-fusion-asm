@@ -234,7 +234,7 @@
 ; this function is called. If Current Energy = Max Energy, Current Missiles = Max Missiles, and Current Power Bombs = 0 (while having PB Upgrade),
 ; force the spawn of a Red-X. Otherwise use the current logic.
 
-.autoregion
+.codeautoregion
     .align 2
 .func @CheckGuaranteedRedX
     ; Preserve original functionality - if r3 (Sprite Property) is not equal to 20h, fall back to the Error Handling Block. Otherwise execute the new code

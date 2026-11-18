@@ -129,7 +129,7 @@
     bl @SuperGeronInitHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 .func @SuperGeronInitHijack
 ; Make Super Missile Geron passable if it hasn't formed yet, but impassable once it has formed.

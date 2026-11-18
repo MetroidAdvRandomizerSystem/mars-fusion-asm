@@ -2,9 +2,12 @@
 .org InstantMorphFlagPointer
     .dw     InstantMorphFlag
 
-.autoregion
+.dataautoregion
 InstantMorphFlag:
     .db     00
+.endautoregion    
+
+.codeautoregion
 .align 2
 ; r0 has boolean return value on whether we should instant morph
 .func @CheckInstantMorph
@@ -51,7 +54,7 @@ InstantMorphFlag:
     bl      @SamusStandingHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; r0 is used as the return value in the outer function, as SamusPose
 ; When returning back to the original call, r0 and r4 have to be restored
@@ -84,7 +87,7 @@ InstantMorphFlag:
     bl      @SamusRunningHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; r0 is used as the return value in the outer function, as SamusPose
 ; When returning back to the original call, r0 and r1 have to be restored
@@ -118,7 +121,7 @@ InstantMorphFlag:
     bl      @SamusCrouchingHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; r0 is used as the return value in the outer function, as SamusPose
 ; When returning back to the original call, r0 and r1 have to be restored
@@ -151,7 +154,7 @@ InstantMorphFlag:
     bl      @SamusMidAirHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; r0 is used as the return value in the outer function, as SamusPose
 ; When returning back to the original call, r1 and r2 have to be restored
@@ -194,7 +197,7 @@ InstantMorphFlag:
     bl      @SamusUnmorphingHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; r0 is used as the return value in the outer function, as SamusPose
 ; When returning back to the original call, r0 and r1 have to be restored
@@ -230,7 +233,7 @@ InstantMorphFlag:
     bl      @SamusMorphBallHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; When returning back to the original call, r0 and r1 have to be restored
 .func @SamusMorphBallHijack
@@ -258,7 +261,7 @@ InstantMorphFlag:
     bl      @SamusRollingHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; When returning back to the original call, r0 and r1 have to be restored
 .func @SamusRollingHijack
@@ -287,7 +290,7 @@ InstantMorphFlag:
     bl      @SamusMorphBallMidAirHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; When returning back to the original call, r0 and r1 have to be restored
 .func @SamusMorphBallMidAirHijack
@@ -316,7 +319,7 @@ InstantMorphFlag:
     bl      @SamusMorphingHijack
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 ; When returning back to the original call, r0 and r1 have to be restored
 .func @SamusMorphingHijack

@@ -21,7 +21,7 @@
     cmp     r3, #00                     ; if != 0, skip drawing
 .endarea
 
-.autoregion
+.codeautoregion
     .align 2
 @InitAndLoadGenericsHighjack:
     push    { lr }
@@ -87,9 +87,10 @@
     .dw     ForceExcessHealthDisplay
 .endarea
 
-.autoregion
+.dataautoregion
 ForceExcessHealthDisplay:
     .db     00
+.endautoregion
 /*
     if (MaxEnergy < 2100) {
         DrawHudEnergy() //vanilla
@@ -101,6 +102,7 @@ ForceExcessHealthDisplay:
         Draw 4-digit energy value
     }
 */
+.codeautoregion
     .align  2
 .func @DrawEnergyForHud
     push    { lr }

@@ -11,7 +11,7 @@
 .incbin "data/rooms/S2-0D-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.dataautoregion
 @S2_CentralShaft_Clipdata:
 .incbin "data/rooms/S2-0D-Clip.rlebg"
 .endautoregion
@@ -26,7 +26,7 @@
 .incbin "data/rooms/S2-2E-Clip.rlebg"
 .endarea
 
-.autoregion
+.dataautoregion
 @S2_CentralShaft_KihunterSpriteset:
     .db     3Eh, 00h
     .db     5Eh, 01h

@@ -35,8 +35,7 @@
     .dw     @SecondaryWeaponSelectMode
 .endarea
 
-.autoregion
-
+.dataautoregion
 .align 2
 @SecondaryWeaponSelectMode:
     .db     0
@@ -53,11 +52,14 @@
     .db     (1 << ExplosiveUpgrade_PowerBombs)
     .db     (SamusUpgrades_CurrPowerBombs)
 
+.endautoregion
+
 @ADDRESSES_CURRENT_WH equ 0
 @ADDRESSES_ALTERNATIVE_WH equ 1
 @ADDRESSES_EXPLOSIVE_UPGRADE equ 2
 @ADDRESSES_SAMUSUPGRADES_CURR_AMMO equ 3
 
+.codeautoregion
 .align 2
 .func @CheckSecondaryDataAndAmmo
     ; Overwrites r0-r2

@@ -8,7 +8,7 @@
 ; - item locations shared between multiple room variants of the same room.
 ;   E.g. Bob's Abode has 2 rooms and collecting Bob in either should make it dissapear in the other too.
 
-.autoregion
+.codeautoregion
 ; Gets the first item index found in the currently loaded room.
 ; The index will be a number from 0 to 99 if found, else it will be -1.
     .align 2
@@ -61,7 +61,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
 ; Gets the index of the passed collectible item in the currently loaded room.
 ; The index will be a number from 0 to 99 if found, else it will be -1.
     .align 2
@@ -104,7 +104,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func IsItemCollected
     ldr     r2, =TanksCollected
@@ -408,7 +408,7 @@
     .db     1 << 3
 .endarea
 
-.autoregion
+.codeautoregion
     .align 4
 .func InitializeSavedata
     push    { r4, lr }
@@ -450,6 +450,10 @@
     .dw     MinorLocationTable
 .endarea
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
     .align 4
 MinorLocationTable:
@@ -487,6 +491,10 @@ MinorLocationTable:
     .db     (@Items_MainDeck_Room54 - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
 @@Items_Sector1:
     .db     05h, 11h, 19h, 1Eh, 20h, 27h, 28h, 2Bh
@@ -506,6 +514,10 @@ MinorLocationTable:
     .db     (@Items_Sector1_Room34 - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
 @@Items_Sector2:
     .db     06h, 09h, 0Ah, 11h, 15h, 19h, 1Bh, 1Fh
@@ -527,6 +539,10 @@ MinorLocationTable:
     .db     (@Items_Sector2_Room37 - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
 @@Items_Sector3:
     .db     03h, 06h, 08h, 09h, 0Ch, 13h, 1Ch, 1Eh
@@ -546,6 +562,10 @@ MinorLocationTable:
     .db     (@Items_Sector3_Room25 - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
 @@Items_Sector4:
     .db     06h, 0Ah, 0Dh, 0Fh, 11h, 17h, 18h, 1Ch
@@ -566,6 +586,10 @@ MinorLocationTable:
     .db     (@Items_Sector4_Room2E - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
 @@Items_Sector5:
     .db     04h, 0Ch, 0Eh, 12h, 16h, 17h, 1Ah, 1Eh
@@ -587,6 +611,10 @@ MinorLocationTable:
     .db     (@Items_Sector5_Room33 - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
 @@Items_Sector6:
     .db     00h, 0Fh, 12h, 18h, 1Ah, 1Eh, 22h, 26h
@@ -603,6 +631,10 @@ MinorLocationTable:
     .db     (@Items_Sector6_Room27 - MinorLocations) >> log2(MinorLocation_Size)
 .endautoregion
 
+; FIXME:
+;   Normally this would be `.dataautoregion`s, but setting it as such causes
+;   armips to have validation errors. If we can, we should set this as a
+;   .dataautoregion should the opportunity present itself.
 .autoregion
     .align 4
 MinorLocations:

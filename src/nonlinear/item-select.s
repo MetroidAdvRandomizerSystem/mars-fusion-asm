@@ -586,7 +586,7 @@
     .dh     043Fh, 43E2h, 3704h, 1DC2h, 0000h, 0000h, 2484h, 0000h
 .endarea
 
-.autoregion
+.codeautoregion
     .align 2
 .func @InitCursorPosition
     ldr     r2, =UpgradeLookup
@@ -642,7 +642,7 @@
     .pool
 .endarea
 
-.autoregion
+.codeautoregion
     .align 2
 .func SamusStatusMenu_Update
     push    { r4-r7, lr }
@@ -802,7 +802,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func SamusStatusMenu_MoveCursor
     ; r0 = start x, r1 = start y, r2 = offset x, r3 = offset y

@@ -8,7 +8,7 @@
 .incbin "data/rooms/S2-1F-BG1.rlebg"
 .endarea
 
-.autoregion
+.dataautoregion
 @S2_DataHub_Clipdata:
 .incbin "data/rooms/S2-1F-Clip.rlebg"
 .endautoregion

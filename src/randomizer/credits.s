@@ -111,7 +111,7 @@
     .dw     CreditsEndDelay
 .endarea
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.dataautoregion
     .align 2
 CreditsEndDelay:
     .dh     512
@@ -344,7 +344,7 @@ CreditsScrollSpeed:
 
 .defineregion 08747900h, 1AC0h
 
-.autoregion
+.dataautoregion
     .align 2
 @CreditsFont:
 .incbin "data/credits-font.gfx"
@@ -363,7 +363,7 @@ CreditsScrollSpeed:
     .dw     087F0A4Ch
 
 ; start Samus Image music when credits are over
-.autoregion
+.codeautoregion
     .align 2
 .func @PlaySamusImageMusic
     push    { r0-r3 }

@@ -120,7 +120,7 @@
     bl      @NonMajorMessageCheck
 .endarea
 
-.autoregion
+.codeautoregion
 .align 4
 .func @NonMajorMessageCheck
     ; if ID > 0x17h (custom message offset by 0x20h), add 0x20h
@@ -146,7 +146,7 @@
     bl      DetermineJingle
 .endarea
 
-.autoregion
+.codeautoregion
 .align 4
 ; Add one to offsets to account for THUMB
 .func DetermineJingle
@@ -177,7 +177,7 @@
     bl  SetMinorLocationMessageBoxTimer
 .endarea
 
-.autoregion
+.codeautoregion
 .align 4
 .func SetMajorLocationMessageBoxTimer
     push    { r2 }
@@ -203,7 +203,7 @@
 .pool
 .endautoregion
 
-.autoregion
+.codeautoregion
 .align 4
 .func SetMinorLocationMessageBoxTimer
     push    { r2 }

@@ -7,7 +7,7 @@
 .incbin "data/rooms/S5-07-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.dataautoregion
 @S5_ArcticContainment_Clipdata:
 .incbin "data/rooms/S5-07-Clip.rlebg"
 .endautoregion

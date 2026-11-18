@@ -1,6 +1,6 @@
 ; Sector 2 - Dessgeega Dorm
 ; add room state with zoros
-.autoregion
+.dataautoregion
 @S2_EntranceHubUnderside_Spriteset0:
     .db     03h, 09h, 24h
     .db     0Fh, 0Fh, 24h

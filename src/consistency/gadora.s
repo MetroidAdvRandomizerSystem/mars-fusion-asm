@@ -30,13 +30,14 @@
     .dw     GadoraLookupTable
 .endarea
 
-.autoregion
-.align 2
-
+.dataautoregion
 GadoraLookupTable:
 ; GadoraArachnus_Id to GadoraYakuza_Id, not counting the unused ones.
 .fill 10, @GadoraFallbackShotNumber
+.endautoregion
 
+.codeautoregion
+.align 2
 .func @GadoraOpeningEyeHijack
 ; We hijack the opening function to read from a custom table on how many times
 ; a specific Gadora should shoot. If that number is our magic number, we execute

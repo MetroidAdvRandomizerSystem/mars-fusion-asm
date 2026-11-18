@@ -1,7 +1,7 @@
 ; Change the map screen to show the next sector instead of the current sector
 ; tank counts when the select button is pressed
 
-.autoregion
+.codeautoregion
     .align 2
 .func CycleSectorMaps
     push    { r4, lr }
@@ -105,7 +105,7 @@
     b       0807572Ch
 .endarea
 
-.autoregion
+.codeautoregion
     .align 2
 .func ShouldShowArrows
     ; return a bool representing whether arrows should be shown in this sector,
@@ -162,7 +162,7 @@
 .endarea
 
 
-.autoregion
+.codeautoregion
     .align 2
 .func @ShowMapChangeOam
     ldr     r3, =NonGameplayRam

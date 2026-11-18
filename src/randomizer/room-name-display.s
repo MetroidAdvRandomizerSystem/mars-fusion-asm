@@ -2,7 +2,7 @@
 .org 0807B90Eh
     bl @LoadRoomName
 
-.autoregion
+.codeautoregion
     .align 2
 ; Load the current room name. The lines we are hijacking are:
 ; ldr     r2, [r7]
@@ -40,7 +40,7 @@
     .dw     RoomNames
 .endarea
 
-.autoregion
+.dataautoregion
 .align 4
 RoomNames:
     .dw     Names_MainDeck
@@ -52,7 +52,7 @@ RoomNames:
     .dw     Names_Sector6
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_MainDeck:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
@@ -79,7 +79,7 @@ Names_MainDeck:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_Sector1:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
@@ -98,7 +98,7 @@ Names_Sector1:
     .dw     @UnknownRoom, @UnknownRoom
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_Sector2:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
@@ -119,7 +119,7 @@ Names_Sector2:
     .dw     @UnknownRoom
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_Sector3:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
@@ -134,7 +134,7 @@ Names_Sector3:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_Sector4:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
@@ -151,7 +151,7 @@ Names_Sector4:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_Sector5:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
@@ -169,7 +169,7 @@ Names_Sector5:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 Names_Sector6:
     .dw     @UnknownRoom, @UnknownRoom, @UnknownRoom, @UnknownRoom

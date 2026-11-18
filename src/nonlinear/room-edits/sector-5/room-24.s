@@ -7,7 +7,7 @@
 .incbin "data/rooms/S5-24-BG1.rlebg"
 .endarea
 
-.autoregion DataFreeSpace, DataFreeSpaceEnd
+.dataautoregion
 @S5_CrowsNest_Clipdata:
 .incbin "data/rooms/S5-24-Clip.rlebg"
 .endautoregion

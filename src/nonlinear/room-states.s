@@ -15,7 +15,7 @@
 ; sector 5 flooded (4F):
 ;   S5-03 => S5-06, S5-05 => S5-10, S5-07 => S5-0F, S5-0D => S5-2C
 
-.autoregion
+.codeautoregion
     .align 2
 .func CheckEvent
     ; WARNING: registers are not preserved. Take caution when relying on values
@@ -525,7 +525,7 @@
     .db     111111b, 1
 .endregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func CheckLevelLayerOverrides
     ; TODO: override bg0 for boiler meltdown

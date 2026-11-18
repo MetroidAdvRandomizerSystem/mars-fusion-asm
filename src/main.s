@@ -81,10 +81,16 @@ reserve_pointer SecondaryWeaponSelectModePointer
 EOF equ 0879ECC8h
 .defineregion EOF, PatcherFreeSpace - EOF, 0FFh
 ; Free up large unused audio sample
-DataFreeSpace equ 080F9A28h
-DataFreeSpaceLen equ 20318h
-DataFreeSpaceEnd equ DataFreeSpace + DataFreeSpaceLen
-.defineregion DataFreeSpace, DataFreeSpaceLen, 0FFh
+CodeFreeSpace equ 080F9A28h
+CodeFreeSpaceLen equ 20318h
+DataFreeSpace equ CodeFreeSpace + CodeFreeSpaceLen
+.defineregion CodeFreeSpace, CodeFreeSpaceLen, 0FFh
+
+.sym off
+; armips custom directives
+.codeautoregion equ .autoregion 08000000h, DataFreeSpace
+.dataautoregion equ .autoregion DataFreeSpace
+.sym on
 
 ; Debug mode patch
 .if DEBUG

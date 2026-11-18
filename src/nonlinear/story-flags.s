@@ -329,7 +329,7 @@
     .pool
 .endarea
 
-.autoregion
+.codeautoregion
 .align 2
 .func ConsoleMessageBoxIdAdjustment
     mov     r1, r0

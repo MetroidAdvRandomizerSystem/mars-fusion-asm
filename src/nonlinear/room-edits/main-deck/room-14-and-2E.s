@@ -48,7 +48,7 @@
 .org 08056E3Eh
     bl      @CheckRidleyCrumbledEvent
 
-.autoregion
+.codeautoregion
 .align 2
 .func @CheckRidleyCrumbledEvent
     ldr     r1, =MiscProgress
@@ -71,7 +71,7 @@
 .org 08056FE0h ; Don't reveal the block under Ridley, instead store that Ridley has Crumbled
     bl      @StoreRidleyHasCrumbled
 
-.autoregion
+.codeautoregion
 .align 2
 .func @StoreRidleyHasCrumbled
     push    { r0 - r2 }

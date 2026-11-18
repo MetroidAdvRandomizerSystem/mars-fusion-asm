@@ -94,7 +94,7 @@
     .pool
 .endarea
 
-.autoregion
+.dataautoregion
 MissileLimit:
     .db     3
 .endautoregion

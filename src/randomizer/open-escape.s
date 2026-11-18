@@ -29,7 +29,7 @@
     .pool
 .endregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func StartEscapeSequence
     push    { lr }

@@ -869,7 +869,7 @@
     .pool
 .endregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func Beam_CalculateDamage
     ; 2 + wave + ice + wide
@@ -910,7 +910,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func Beam_HitSprite
     push    { r4-r7, lr }
@@ -1079,7 +1079,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func ChargedBeam_CalculateDamage
     ; floor(5 * (2 + (wave + ice + wide) / 2) * (3 * plasma / 5))
@@ -1128,7 +1128,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func ChargedBeam_HitSprite
     push    { r4-r7, lr }
@@ -1299,7 +1299,7 @@
 .endfunc
 .endautoregion
 
-.autoregion
+.codeautoregion
     .align 2
 .func @BeamFlare_CalculateDamage
     ; set beam flare damage
@@ -1334,7 +1334,7 @@
     b       080845C4h
 .endarea
 
-.autoregion
+.codeautoregion
     .align 2
 .func @PseudoScrew_CalculateDamage
     ; set pseudo-screw damage
@@ -1529,7 +1529,7 @@
     .dw     ChargedWaveBeam_Update | 1
     .dw     ChargedWaveBeam_Update | 1
 
-.autoregion
+.dataautoregion
 @BeamImpactParticle:
     .db     3   ; normal
     .db     4   ; pure charge
@@ -1541,7 +1541,7 @@
     .db     6   ; charge + wide + plasma
 .endautoregion
 
-.autoregion
+.dataautoregion
 @BeamSfx:
     .db     0C9h    ; pure wide
     .db     0CBh    ; pure plasma
@@ -1553,7 +1553,7 @@
     .db     0CDh    ; ice + wave + plasma
 .endautoregion
 
-.autoregion
+.dataautoregion
 @ChargedBeamSfx:
     .db     0EEh    ; pure wide
     .db     0EFh    ; pure plasma
@@ -1565,7 +1565,7 @@
     .db     0F1h    ; ice + wave + plasma
 .endautoregion
 
-.autoregion
+.dataautoregion
 @BeamGfxIndex:
     .db     0   ; pure wide
     .db     1   ; pure plasma
@@ -1577,7 +1577,7 @@
     .db     2   ; ice + wave + plasma
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 @BeamOamPointers:
     .dw     0858DBDCh, 0858DBFCh, 0858DC1Ch
@@ -1586,7 +1586,7 @@
     .dw     0858E1D8h, 0858E1E8h, 0858E1F8h
 .endautoregion
 
-.autoregion
+.dataautoregion
     .align 4
 @ChargedBeamOamPointers:
     .dw     0858DC3Ch, 0858DC54h, 0858DC6Ch
@@ -1595,12 +1595,12 @@
     .dw     0858E208h, 0858E218h, 0858E228h
 .endautoregion
 
-.autoregion
+.dataautoregion
 @BeamBboxOffsets:
     .db     10h, 0Ch, 14h, 10h
 .endautoregion
 
-.autoregion
+.dataautoregion
 @ChargedBeamBboxOffsets:
     .db     14h, 14h, 14h, 14h
 .endautoregion

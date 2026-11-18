@@ -1,7 +1,7 @@
 ; Overrides vanilla music behavior. Guts functionality for most sub-event
 ; specific songs.
 
-.autoregion
+.codeautoregion
     .align 2
 .func Music_VariableFade
     push    { lr }

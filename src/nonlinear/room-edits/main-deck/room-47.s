@@ -17,7 +17,7 @@
 
 ; Change QuarantineBayHornoad Palette - Palette pointers are offset by 10h, as the first 10h
 ; Sprite_Ids do not use palettes
-.autoregion
+.dataautoregion
     .align 2
 @UnusedHornoadPalette:
 .incbin "data/unused-hornoad-palette.bin"
