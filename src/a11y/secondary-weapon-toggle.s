@@ -35,8 +35,7 @@
     .dw     @SecondaryWeaponSelectMode
 .endarea
 
-.codeautoregion
-
+.dataautoregion
 .align 2
 @SecondaryWeaponSelectMode:
     .db     0
@@ -49,15 +48,18 @@
     .db     (SamusUpgrades_CurrMissiles)
 @PowerBombAddresses:
     .db     @WH_POWER_BOMB
-    .db     @WH_MISSILES 
+    .db     @WH_MISSILES
     .db     (1 << ExplosiveUpgrade_PowerBombs)
     .db     (SamusUpgrades_CurrPowerBombs)
+
+.endautoregion
 
 @ADDRESSES_CURRENT_WH equ 0
 @ADDRESSES_ALTERNATIVE_WH equ 1
 @ADDRESSES_EXPLOSIVE_UPGRADE equ 2
 @ADDRESSES_SAMUSUPGRADES_CURR_AMMO equ 3
 
+.codeautoregion
 .align 2
 .func @CheckSecondaryDataAndAmmo
     ; Overwrites r0-r2
@@ -150,8 +152,8 @@
 
 @@ButtonNotPressed:
     ; This branch assumes we can't loose the secondary weapon usability while not using them
-    ; Check first what the last selected weapon was. 
-    ; If it was the "alternative" one (e.g. WH_MISSILES when we're currently in a morph state), we should enable our current secondary 
+    ; Check first what the last selected weapon was.
+    ; If it was the "alternative" one (e.g. WH_MISSILES when we're currently in a morph state), we should enable our current secondary
     ldrb    r0, [r6, #SamusState_SecondaryWeaponSelect]
     ldrb    r1, [r4, @ADDRESSES_ALTERNATIVE_WH]
     cmp     r0, r1

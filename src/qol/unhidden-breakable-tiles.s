@@ -16,9 +16,12 @@
     bl      @BreakStateIfRevealed
 .endarea
 
-.codeautoregion
+.dataautoregion
 RevealHiddenTilesFlag:
     .db     00h
+.endautoregion
+
+.codeautoregion
     .align 2
 .func @RemoveMiscTilesFromRoom
     push    { lr }

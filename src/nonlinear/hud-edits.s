@@ -90,6 +90,7 @@
 .dataautoregion
 ForceExcessHealthDisplay:
     .db     00
+.endautoregion
 /*
     if (MaxEnergy < 2100) {
         DrawHudEnergy() //vanilla
@@ -101,6 +102,7 @@ ForceExcessHealthDisplay:
         Draw 4-digit energy value
     }
 */
+.codeautoregion
     .align  2
 .func @DrawEnergyForHud
     push    { lr }

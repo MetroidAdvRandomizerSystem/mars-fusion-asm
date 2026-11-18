@@ -26,10 +26,12 @@
 .endarea
 
 .dataautoregion
-.align 2
 ZazabiLookupTable:
 .fill 4, @ZazabiDefaultAdjustmentNumber   ; 4 distinct phases
+.endautoregion
 
+.codeautoregion
+.align 2
 .func @ZazabiCrawlingHijack
 ; r0 is value of work3 (after doing gSpriteRandomNumber/4), r1 points to work3, r2 is gSubSpriteData1.health, r4 is gCurrentSprite
 ; At the end of the function, r0 has to be the new value work3 and r1 has to point to work3

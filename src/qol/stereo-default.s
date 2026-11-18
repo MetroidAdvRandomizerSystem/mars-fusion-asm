@@ -23,10 +23,12 @@
     bl      @FileSelectSetupOamHighjack
 .endarea
 
-.codeautoregion
+.dataautoregion
 DefaultStereoFlag:
     .db     00
+.endautoregion
 
+.codeautoregion
     .align 2
 @FileSelectInitHighjack_SetupOam:
     mov     r1, #66h                ; Default x-position of selected speaker type cursor

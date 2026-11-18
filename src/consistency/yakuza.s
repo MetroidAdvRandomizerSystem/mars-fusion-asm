@@ -20,7 +20,9 @@
 .align 2
 YakuzaRounds:
 .db @YakuzaMagicNumber
+.endautoregion
 
+.codeautoregion
 .align 2
 .func @YakuzaClosingMouthHijack
 ; r0 is the value of work0 (after doing gSpriteRandomNumber/4)

@@ -2,9 +2,12 @@
 .org InstantMorphFlagPointer
     .dw     InstantMorphFlag
 
-.codeautoregion
+.dataautoregion
 InstantMorphFlag:
     .db     00
+.endautoregion    
+
+.codeautoregion
 .align 2
 ; r0 has boolean return value on whether we should instant morph
 .func @CheckInstantMorph
