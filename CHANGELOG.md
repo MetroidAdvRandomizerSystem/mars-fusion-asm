@@ -4,6 +4,11 @@
 
 - Fixed: Being unable to use Missiles as intended if they're a multiple of 256.
 
+### Room Adjustments
+
+#### Sector 2
+- Fixed: Cathedral (S2-0D) now has a Stop Enemy Block above the Door to Puyo Palace to stop the Zero to stop climbing the room without Hi-Jump.
+
 ## 0.14.1 - 2026-10-24
 - Fixed: Mono audio can now be selected when stereo is set as the default option.
 
