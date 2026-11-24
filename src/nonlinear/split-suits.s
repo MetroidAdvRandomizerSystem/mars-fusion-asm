@@ -13,7 +13,7 @@
 @VariaReduction equ 0.4
 @VfxInitialCountdownValue equ 10 ; in frames
 @ColdKnockbackFrameTreshold equ int(FramesPerSecond * 1.45)
-@SamusHurtGruntThreshold equ int((FramesPerSecond / 2) + (FramesPerSecond * 0.8))
+@SamusHurtGruntThreshold equ int((FramesPerSecond * 0.8) + 2)
 ; These two should play at the start and midway to SamusHurtGrunt
 @LiquidHazardHurtSfxThreshold1 equ 1
 @LiquidHazardHurtSfxThreshold2 equ int((@SamusHurtGruntThreshold / 2) + 1)
