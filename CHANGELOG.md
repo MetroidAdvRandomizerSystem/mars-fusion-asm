@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased - 2026-??-??
+## Unreleased - 2026-12-??
+
+## 0.14.2 - 2026-11-24
 
 - Fixed: Being unable to use Missiles as intended if they're a multiple of 256.
 - Fixed: The liquid-taking-damage sound effect now playing continously instead of regurlarly cutting out.
