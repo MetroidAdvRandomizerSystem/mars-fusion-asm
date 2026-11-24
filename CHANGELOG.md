@@ -3,6 +3,7 @@
 ## Unreleased - 2026-??-??
 
 - Fixed: Being unable to use Missiles as intended if they're a multiple of 256.
+- Fixed: The liquid-taking-damage sound effect now playing continously instead of regurlarly cutting out.
 - Changed: When an environmental hazard is configured to do 0 damage, then no SFX indicating that you're taking damage will play.
 - Changed: When taking damage in cold environments, Samus will now only grunt when taking knockback.
 
