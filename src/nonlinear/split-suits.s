@@ -6,14 +6,14 @@
 ; Also splits up sprite damage so that the reductions are based off of how many suits you
 ; have instead of prioritizing gravity over varia.
 
-; NOTE: Damage tick sfx can occur extremely often at higher values of heat,
+; NOTE: Damage tick sfx can occur every frame at 60+ values of heat,
 ; subzero, or cold hazard damage. Worth looking into if problems with the
 ; sound engine start occurring.
 
 @VariaReduction equ 0.4
 @VfxInitialCountdownValue equ 10 ; in frames
 @ColdKnockbackFrameTreshold equ int(FramesPerSecond * 1.45)
-@SamusHurtGruntThreshold equ int((FramesPerSecond / 2) + (FramesPerSecond * 0.8))
+@SamusHurtGruntThreshold equ int((FramesPerSecond * 0.8) + 2)
 ; These two should play at the start and midway to SamusHurtGrunt
 @LiquidHazardHurtSfxThreshold1 equ 1
 @LiquidHazardHurtSfxThreshold2 equ int((@SamusHurtGruntThreshold / 2) + 1)
@@ -46,7 +46,11 @@
     ; It is, so continue and increase the environmental damage timer
     ldr     r1, =EnvironmentalHazardDps
     ldrb    r2, [r1, r0]
-    ; TODO: maybe special cases for when r2 is 0?
+    ; If we take 0 damage, skip all suit/damage/sfx/vfx checks and go straight to knockback
+    ; TODO: also remove dust particles/sfx with liquids?
+    cmp     r2, 0
+    beq     @@check_knockback
+
     ldrb    r3, [r5, SamusTimers_EnvironmentalDamage]
     add     r3, r2
     ; Check if we have Varia equipped
@@ -119,6 +123,9 @@
     ldrb    r1, [r5, SamusTimers_EnvironmentalDamageSfx]
     add     r1, #1
     strb    r1, [r5, SamusTimers_EnvironmentalDamageSfx]
+    ; If we're in a cold hazard, jump to checking knockback, as knockback already plays its grunt sfx.
+    cmp     r4, #EnvironmentalHazard_Cold
+    beq     @@check_knockback
     ; If we're not in a liquid hazard, jump to checking grunt sfx
     sub     r0, r4, #EnvironmentalHazard_Lava
     cmp     r0, #EnvironmentalHazard_Acid - EnvironmentalHazard_Lava
