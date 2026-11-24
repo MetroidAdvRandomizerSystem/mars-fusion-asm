@@ -7,6 +7,11 @@
 - Changed: When an environmental hazard is configured to do 0 damage, then no SFX indicating that you're taking damage will play.
 - Changed: When taking damage in cold environments, Samus will now only grunt when taking knockback.
 
+### Room Adjustments
+
+#### Sector 2
+- Fixed: Cathedral (S2-0D) now has a Stop Enemy Block at the Door to Puyo Palace to stop the Zero from climbing over it should there be a hatch placed in Door Lock Rando.
+
 ## 0.14.1 - 2026-10-24
 - Fixed: Mono audio can now be selected when stereo is set as the default option.
 
