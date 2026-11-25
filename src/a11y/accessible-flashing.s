@@ -5,7 +5,7 @@
 ; Change (mini)map flashings
 .definelabel MinimapIndicatorFlashingSpeed, 10h
 
-.org 08071B94h ; In-Game Minimap Position Indicator
+.org 08071B94h ; In-Game Minimap Position Indicator, inside of DrawHudOAM
     mov     r0, #MinimapIndicatorFlashingSpeed
 
 .org 08566848h ; Pause Screen OAM for Map Position Indicator/Debug Cursor
